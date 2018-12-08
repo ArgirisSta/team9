@@ -1,19 +1,36 @@
-package com.team9.project;
+ package com.team9.project.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Persons")
 public class Person {
-
+    @Id
+    @Column(name = "person_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long personId;
+    @Column(name = "afm", length = 20, unique = true)
+    private String afm;
+    @Column(name = "name", length = 15)
     private String name;
+    @Column(name = "surname", length = 25)
     private String surname;
+    @Column(name = "address", length = 30)
     private String address;
+    @Column(name = "email", length = 20)
     private String email;
+    @Column(name = "password", length = 40, nullable = false)
     private String password;
+    @Column(name = "car_brand", length = 10)
     private CarBrand carBrand;
+    @Column(name = "plate_number", length = 8)
     private String plateNumber;
+    @Column(name = "user_type", length = 10, nullable = false)
     private UserType userType;
 
-    public Person(long personId, String name, String surname, String address, String email, String password, CarBrand carBrand, String plateNumber, UserType userType) {
+    public Person(long personId, String afm, String name, String surname, String address, String email, String password, CarBrand carBrand, String plateNumber, UserType userType) {
         this.personId = personId;
+        this.afm = afm;
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -30,6 +47,14 @@ public class Person {
 
     public void setPersonId(long personId) {
         this.personId = personId;
+    }
+
+    public String getAfm() {
+        return afm;
+    }
+
+    public void setAfm(String afm) {
+        this.afm = afm;
     }
 
     public String getName() {

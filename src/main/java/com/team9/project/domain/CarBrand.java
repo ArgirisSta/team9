@@ -1,4 +1,4 @@
-package com.team9.project;
+package com.team9.project.domain;
 
 public enum CarBrand {
 

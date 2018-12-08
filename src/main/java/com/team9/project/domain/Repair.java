@@ -1,22 +1,37 @@
-package com.team9.project;
+package com.team9.project.domain;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "Repairs")
 public class Repair {
 
+    @Id
+    @Column(name = "repair_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long repairId;
+    @Column(name = "repair_date")
     private LocalDateTime repairDate;
+    @Column(name = "repair_status")
     private RepairStatus repairStatus;
+    @Column(name = "repair_Type")
     private RepairType repairType;
+    @Column(name = "price")
     private double price;
+    @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "person_id")
     private Person owner;
+    @Column(name = "comment", length = 30)
     private String comment;
 
-    public Repair(LocalDateTime repairDate, RepairStatus repairStatus, RepairType repairType, double price, Person owner, String comment) {
+    public Repair(long repairId, LocalDateTime repairDate, RepairStatus repairStatus, RepairType repairType, double price, Person owner, String comment) {
+        this.repairId = repairId;
         this.repairDate = repairDate;
         this.repairStatus = repairStatus;
         this.repairType = repairType;
         this.price = price;
-        this.owner = owner;
+//        this.owner = owner;
         this.comment = comment;
     }
 
@@ -53,11 +68,12 @@ public class Repair {
     }
 
     public Person getOwner() {
-        return owner;
+//        return owner;
+        return null;
     }
 
     public void setOwner(Person owner) {
-        this.owner = owner;
+//        this.owner = owner;
     }
 
     public String getComment() {
@@ -75,7 +91,7 @@ public class Repair {
                 ", repairStatus=" + repairStatus +
                 ", repairType=" + repairType +
                 ", price=" + price +
-                ", owner=" + owner +
+//                ", owner=" + owner +
                 ", comment='" + comment + '\'' +
                 '}';
     }
