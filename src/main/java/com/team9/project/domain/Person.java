@@ -35,19 +35,6 @@ public class Person {
     private Collection repairs;
 
 
-    public Person(long personId, String afm, String name, String surname, String address, String email, String password, CarBrand carBrand, String plateNumber, UserType userType) {
-        this.personId = personId;
-        this.afm = afm;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.email = email;
-        this.password = password;
-        this.carBrand = carBrand;
-        this.plateNumber = plateNumber;
-        this.userType = userType;
-    }
-
     public long getPersonId() {
         return personId;
     }
