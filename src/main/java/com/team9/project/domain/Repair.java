@@ -13,8 +13,10 @@ public class Repair {
     private long repairId;
     @Column(name = "repair_date")
     private LocalDateTime repairDate;
+    @Enumerated(EnumType.STRING)
     @Column(name = "repair_status")
     private RepairStatus repairStatus;
+    @Enumerated(EnumType.STRING)
     @Column(name = "repair_Type")
     private RepairType repairType;
     @Column(name = "price")
@@ -31,7 +33,7 @@ public class Repair {
         this.repairStatus = repairStatus;
         this.repairType = repairType;
         this.price = price;
-//        this.owner = owner;
+        this.owner = owner;
         this.comment = comment;
     }
 
@@ -68,12 +70,11 @@ public class Repair {
     }
 
     public Person getOwner() {
-//        return owner;
-        return null;
+        return owner;
     }
 
     public void setOwner(Person owner) {
-//        this.owner = owner;
+        this.owner = owner;
     }
 
     public String getComment() {
@@ -91,7 +92,7 @@ public class Repair {
                 ", repairStatus=" + repairStatus +
                 ", repairType=" + repairType +
                 ", price=" + price +
-//                ", owner=" + owner +
+                ", owner=" + owner +
                 ", comment='" + comment + '\'' +
                 '}';
     }

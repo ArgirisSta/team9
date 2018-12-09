@@ -25,6 +25,7 @@ public class Person {
     private CarBrand carBrand;
     @Column(name = "plate_number", length = 8)
     private String plateNumber;
+    @Enumerated(EnumType.STRING)
     @Column(name = "user_type", length = 10, nullable = false)
     private UserType userType;
 
