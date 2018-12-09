@@ -9,7 +9,7 @@ public class Repair {
 
     @Id
     @Column(name = "repair_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long repairId;
     @Column(name = "repair_date")
     private LocalDateTime repairDate;

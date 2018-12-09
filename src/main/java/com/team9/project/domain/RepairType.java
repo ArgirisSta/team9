@@ -2,8 +2,8 @@ package com.team9.project.domain;
 
 public enum RepairType {
 
-    MINOR("Minor Repair"),
-    MAJOR("Major Repair");
+    MINOR("Minor"),
+    MAJOR("Major");
 
     private String repairType;
 

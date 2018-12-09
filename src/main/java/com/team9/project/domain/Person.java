@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Person {
     @Id
     @Column(name = "person_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long personId;
     @Column(name = "afm", length = 20, unique = true)
     private String afm;
@@ -21,12 +21,13 @@ public class Person {
     private String email;
     @Column(name = "password", length = 40, nullable = false)
     private String password;
+    @Enumerated(EnumType.STRING)
     @Column(name = "car_brand", length = 10)
     private CarBrand carBrand;
     @Column(name = "plate_number", length = 8)
     private String plateNumber;
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_type", length = 10, nullable = false)
+    @Column(name = "user_type", length = 15, nullable = false)
     private UserType userType;
 
     public Person(long personId, String afm, String name, String surname, String address, String email, String password, CarBrand carBrand, String plateNumber, UserType userType) {
