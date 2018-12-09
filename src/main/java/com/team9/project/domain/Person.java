@@ -30,19 +30,6 @@ public class Person {
     @Column(name = "user_type", length = 15, nullable = false)
     private UserType userType;
 
-    public Person(long personId, String afm, String name, String surname, String address, String email, String password, CarBrand carBrand, String plateNumber, UserType userType) {
-        this.personId = personId;
-        this.afm = afm;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.email = email;
-        this.password = password;
-        this.carBrand = carBrand;
-        this.plateNumber = plateNumber;
-        this.userType = userType;
-    }
-
     public long getPersonId() {
         return personId;
     }
