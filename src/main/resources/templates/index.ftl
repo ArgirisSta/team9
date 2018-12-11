@@ -9,5 +9,8 @@
 </head>
 <body>
 <h1>THIS IS INDEX</h1>
+<#if person??>
+${person}
+</#if>
 </body>
 </html>

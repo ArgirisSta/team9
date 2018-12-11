@@ -1,6 +1,6 @@
 package com.team9.project.controller;
 
-import com.team9.project.service.PersonServiceImp;
+import com.team9.project.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    private PersonServiceImp personService;
+    private PersonService personService;
 
 
     @GetMapping(value = "/")
