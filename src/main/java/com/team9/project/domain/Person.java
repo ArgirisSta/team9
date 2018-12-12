@@ -34,8 +34,14 @@ public class Person {
             targetEntity=Repair.class)
     private Collection repairs;
 
+     public Person(long personId) {
+         this.personId = personId;
 
-    public long getPersonId() {
+     }
+    public  Person(){
+
+    }
+     public long getPersonId() {
         return personId;
     }
 

@@ -2,9 +2,9 @@ package com.team9.project.service;
 
 
 import com.team9.project.domain.Person;
+import com.team9.project.domain.Repair;
 import com.team9.project.exception.PersonNotFoundException;
 import com.team9.project.repository.PersonRepository;
-import com.team9.project.repository.PersonRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,9 +29,11 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person findPersonByemailAndPassword(String email, String password) {
-        return personRepository.findPersonByemailAndPassword(email, password);
+    public Person findByemailAndPassword(String email, String password) {
+        return (Person) personRepository.findByemailAndPassword(email, password);
     }
+
+
 
 
 }
