@@ -9,5 +9,11 @@
 </head>
 <body>
 <h1>THIS IS INDEX</h1>
+<<<<<<< HEAD
+=======
+<#if person??>
+${person}
+</#if>
+>>>>>>> 46b00b9d5d5e902ffe4d1ab83b9d1a9223a72ffc
 </body>
 </html>
