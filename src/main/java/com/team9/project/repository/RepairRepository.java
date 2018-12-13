@@ -15,6 +15,7 @@ public interface RepairRepository extends JpaRepository<Repair,Long> {
     List<Repair> findAll();
     Optional<Repair> findById(Long Id);
     List<Repair> findByowner(Person person);
+    Repair save(Repair repair);
 
 
 

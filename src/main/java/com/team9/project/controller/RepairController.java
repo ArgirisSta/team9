@@ -23,7 +23,7 @@ public class RepairController { private final Logger logger = LoggerFactory.getL
     @Autowired
     RepairServiceImpl repairService;
 
-    @GetMapping("/repairs")
+    @GetMapping("/repair/repairs")
     public String repair (Model model, @RequestParam(value = "id") Long id) {
         Repair repair;
         repair = repairService.findById(id);
@@ -35,10 +35,10 @@ public class RepairController { private final Logger logger = LoggerFactory.getL
 
     }
 
-    @GetMapping("/repairsByPersonId")
+    @GetMapping("/repair/repairsByPersonId")
     public String repairByPersonId (Model model, @RequestParam(value = "id") Long id) {
         List<Repair> repair;
-        Person person = new Person(1);
+        Person person = new Person(id);
 
 
         repair = (List<Repair>) repairService.findRepairByPersonId(person);
@@ -46,13 +46,14 @@ public class RepairController { private final Logger logger = LoggerFactory.getL
         logger.info("====Getting all Repairs====");
         //repairService.findRepairByPersonId(person).forEach(repairl -> logger.info(repairl.toString()));
         model.addAttribute("repair", repair);
-       // model.addAttribute("surname", repair.get(1).getRepairType());
+        String repairString = repair.toString();
+        model.addAttribute("surname", repairString);
 
         return "listings";
 
 
     }
-
+    //@GetMapping("/repair/repairsByPersonId")
 
 
 

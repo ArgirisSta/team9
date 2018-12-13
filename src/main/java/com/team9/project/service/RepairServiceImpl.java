@@ -35,7 +35,9 @@ public class RepairServiceImpl {
                 repairRepository.findByowner(person);
     }
 
-
+    public Repair save(Repair repair){
+        return repairRepository.save(repair);
+    }
 
 
 }

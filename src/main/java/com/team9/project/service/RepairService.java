@@ -9,8 +9,8 @@ import java.util.List;
 public interface RepairService {
 
     List<Repair> findAll();
-    List<Repair> findById(Long Id);
+    Repair findById(Long Id);
     List<Repair> findRepairByPersonId(Person person);
-
+    Repair save(Repair repair);
 
 }

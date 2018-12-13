@@ -63,48 +63,24 @@
             </ul>
         </div>
 
+
+
+
+
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Listings</h1>
         <table class="table table-striped">
-          <thead><tr><th>RepairId<th>Repairdate<th>RepairStatus<th>RepairType<th>RepairPrice<th>RepairCommnents
+          <thead><tr><th>Repairdate<th>RepairStatus<th>RepairType<th>RepairPrice<th>RepairCommnents
           <#list repair as repair>
 
-            <tr><td>${repair.repairId}<td>${repair.repairDate}<td>${repair.repairStatus}<td>${repair.repairType}<td>${repair.price}<td>${repair.comment}
+            <tr><td>${repair.repairDate}<td>${repair.repairStatus}<td>${repair.repairType}<td>${repair.price}<td>${repair.comment}
           </#list>
         </table>
          </div>
 
 
 
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Listings</h1>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Listing ID</th>
-                    <th>Date</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Status</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
 
-
-
-                    <td>
-                        <button class="btn btn-danger button-delete-confirmation" type="submit" value="Delete">Delete</button>
-                    </td>
-
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
     </div>
 </div>
 
@@ -115,6 +91,8 @@
         <button class="btn btn-clock btn-primary">Close</button>
     </div>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
