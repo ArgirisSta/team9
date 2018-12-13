@@ -25,20 +25,21 @@ public class AdminController {
     }
 
     @GetMapping(value = "/admin/register")
-    public String showRegistrationPage() {
+    public String showRegistrationPage(Model model) {
+        model.addAttribute("registerForm", new RegisterForm());
         return "register";
     }
 
     @PostMapping(value = "/admin/register")
     public String handleRegistrationForm(Model model, @Valid @ModelAttribute("registerForm") RegisterForm registerForm,
-                                         BindingResult bindingResult, Person person) {
-        if(!bindingResult.hasErrors()) {
-            model.addAttribute("person", person);
-            adminService.registerPerson(person);
-            return "registered";
+                                         BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return "register";
         }
 
-        return "index";
+        adminService.registerPerson(registerForm);
+
+        return "success";
     }
 
 

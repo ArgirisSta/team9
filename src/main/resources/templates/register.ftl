@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +28,7 @@
 </head>
 
 <body>
+<#import "/spring.ftl" as spring />
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -41,12 +43,14 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
+                                            <@spring.bind "registerForm.name"/>
                                             <input class="input--style-5" type="text" name="name">
                                             <label class="label--desc">Name</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
+                                            <@spring.bind "registerForm.surname"/>
                                             <input class="input--style-5" type="text" name="surname">
                                             <label class="label--desc">Surname</label>
                                         </div>
@@ -58,6 +62,7 @@
                             <div class="name">AFM</div>
                             <div class="value">
                                 <div class="input-group">
+                                    <@spring.bind "registerForm.afm"/>
                                     <input class="input--style-5" type="text" name="afm">
                                 </div>
                             </div>
@@ -66,15 +71,8 @@
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
+                                    <@spring.bind "registerForm.password"/>
                                     <input class="input--style-5" type="password" name="password">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Repeat Password</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="password" name="repeat_password">
                                 </div>
                             </div>
                         </div>
@@ -82,6 +80,7 @@
                             <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
+                                    <@spring.bind "registerForm.email"/>
                                     <input class="input--style-5" type="email" name="email">
                                 </div>
                             </div>
@@ -90,6 +89,7 @@
                             <div class="name">Address</div>
                             <div class="value">
                                 <div class="input-group">
+                                    <@spring.bind "registerForm.address"/>
                                     <input class="input--style-5" type="text" name="address">
                                 </div>
                             </div>
@@ -100,6 +100,7 @@
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="userType">
+                                            <@spring.bind "registerForm.userType"/>
                                             <option disabled="disabled" selected="selected">Choose user type</option>
                                             <option>ADMIN</option>
                                             <option>USER</option>
@@ -113,6 +114,7 @@
                             <div class="name">Plate Number</div>
                             <div class="value">
                                 <div class="input-group">
+                                    <@spring.bind "registerForm.plateNumber"/>
                                     <input class="input--style-5" type="text" name="plateNumber">
                                 </div>
                             </div>
@@ -124,6 +126,7 @@
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="carBrand">
                                             <option disabled="disabled" selected="selected">Choose brand</option>
+                                            <@spring.bind "registerForm.carBrand"/>
                                             <option>ALFA_ROMEO</option>
                                             <option>BMW</option>
                                         </select>
