@@ -1,160 +1,222 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/favicon.png" rel="icon">
 
-    <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Add New Owner</title>
 
-    <!-- Icons font CSS-->
-    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap2.min.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
 
-    <!-- Vendor CSS-->
-    <link href="/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- Custom styles for this template -->
+    <link href="/css/simple-sidebar.css" rel="stylesheet">
 
-    <!-- Main CSS-->
-    <link href="/css/main.css" rel="stylesheet" media="all">
 </head>
 
 <body>
 <#import "/spring.ftl" as spring />
-    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
-        <div class="wrapper wrapper--w790">
-            <div class="card card-5">
-                <div class="card-heading">
-                    <h2 class="title">Registration Form</h2>
-                </div>
-                <div class="card-body">
-                    <form action="/admin/register" name="registerForm" method="POST">
-                        <div class="form-row m-b-55">
-                            <div class="name">Full Name</div>
-                            <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <@spring.bind "registerForm.name"/>
-                                            <input class="input--style-5" type="text" name="name">
-                                            <label class="label--desc">Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <@spring.bind "registerForm.surname"/>
-                                            <input class="input--style-5" type="text" name="surname">
-                                            <label class="label--desc">Surname</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">AFM</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <@spring.bind "registerForm.afm"/>
-                                    <input class="input--style-5" type="text" name="afm">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Password</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <@spring.bind "registerForm.password"/>
-                                    <input class="input--style-5" type="password" name="password">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <@spring.bind "registerForm.email"/>
-                                    <input class="input--style-5" type="email" name="email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Address</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <@spring.bind "registerForm.address"/>
-                                    <input class="input--style-5" type="text" name="address">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">User Type</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="userType">
-                                            <@spring.bind "registerForm.userType"/>
-                                            <option disabled="disabled" selected="selected">Choose user type</option>
-                                            <option>ADMIN</option>
-                                            <option>USER</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Plate Number</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <@spring.bind "registerForm.plateNumber"/>
-                                    <input class="input--style-5" type="text" name="plateNumber">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Car Brand</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="carBrand">
-                                            <option disabled="disabled" selected="selected">Choose brand</option>
-                                            <@spring.bind "registerForm.carBrand"/>
-                                            <option>ALFA_ROMEO</option>
-                                            <option>BMW</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
-                        </div>
-                    </form>
+
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="Home.html"> <img src="./css/logo.png" width="200px" height="80px"></a>
+            </li>
+            <li>
+                <a href="Home.html">Home</a>
+            </li>
+            <li>
+                <a href="Repairs.html">Repairs</a>
+            </li>
+            <li>
+                <a href="Users.html">Owners</a>
+            </li>
+            <li>
+                <a href="addUser.html">Add new user</a>
+            </li>
+            <li>
+                <a href="addRepair.html">Add new repair</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+        <div class="container-fluid">
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1 class="page-header">Add New Owner</h1>
+
+                <form id="create-user" action="/admin/register" name="registerForm" class="form-horizontal"
+                      method="POST"
+                ">
+
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" for="name">First Name</label>
+                    <div class="col-sm-11">
+                        <@spring.bind "registerForm.name"/>
+                        <input class="form-control" id="name" name="name" placeholder="First Name"
+                               type="text"/>
+                        <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
+
                 </div>
             </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label" for="surname">Surname</label>
+                <div class="col-sm-11">
+                    <@spring.bind "registerForm.surname"/>
+                    <input class="form-control" id="surname" name="surname" placeholder="Surname"
+                           type="text"/>
+                    <#list spring.status.errorMessages as error>
+                    <span>${error}</span>
+                </#list>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-1 control-label" for="afm">AFM</label>
+            <div class="col-sm-11">
+                <@spring.bind "registerForm.afm"/>
+                <input class="form-control" id="afm" name="afm" placeholder="AFM" type="text"/>
+                <#list spring.status.errorMessages as error>
+                <span>${error}</span>
+            </#list>
         </div>
     </div>
+    <div class="form-group">
+        <label class="col-sm-1 control-label" for="password">Password</label>
+        <div class="col-sm-11">
+            <@spring.bind "registerForm.password"/>
+            <input class="form-control" id="password" name="password" placeholder="" type="password"/>
+            <#list spring.status.errorMessages as error>
+            <span>${error}</span>
+        </#list>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-1 control-label" for="email">Email</label>
+    <div class="col-sm-11">
+        <@spring.bind "registerForm.email"/>
+        <input class="form-control" id="email" name="email" placeholder="example@email.com" type="email"/>
+        <#list spring.status.errorMessages as error>
+        <span>${error}</span>
+    </#list>
+</div>
+</div>
+<div class="form-group">
+    <label class="col-sm-1 control-label" for="address">Address</label>
+    <div class="col-sm-11">
+        <@spring.bind "registerForm.address"/>
+        <input class="form-control" id="address" name="address" placeholder="address" type="text"/>
+        <#list spring.status.errorMessages as error>
+        <span>${error}</span>
+    </#list>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-1 control-label" for="userType">Role</label>
+<div class="col-sm-11">
+    <@spring.bind "registerForm.userType"/>
+    <select class="form-control" id="userType" name="userType">
+        <option value="" disabled selected>Select the role for the user</option>
+        <option value="ADMIN">Administrator</option>
+        <option value="USER">USER</option>
+    </select>
+    <#list spring.status.errorMessages as error>
+    <span>${error}</span>
+</#list>
+</div>
+        </div>
+<div class="form-group">
+<label class="col-sm-1 control-label" for="plateNumber">Plate Number</label>
+<div class="col-sm-11">
+    <@spring.bind "registerForm.plateNumber"/>
+    <input class="form-control" id="plateNumber" name="plateNumber" placeholder="ABC-1234" type="text"/>
+    <#list spring.status.errorMessages as error>
+    <span>${error}</span>
+</#list>
+</div>
+        </div>
+<div class="form-group">
+<label class="col-sm-1 control-label" for="type"> Car Brand</label>
+<@spring.bind "registerForm.carBrand"/>
+<div class="col-sm-11">
+    <select class="form-control" id="carBrand" name="carBrand">
+        <option selected value="">Select the brand of the car</option>
+        <option value="ALFA_ROMEO">Alfa Romeo</option>
+        <option value="ASTON_MARTIN">Aston Martin</option>
+        <option value="AUDI">Audi</option>
+        <option value="BENTLEY">Bentley</option>
+        <option value="BMW">BMW</option>
+        <option value="BUGATTI">Buggati</option>
+        <option value="CHEVROLET">Chevrolet</option>
+        <option value="CITROEN">Citroen</option>
+        <option value="FERRARI">Ferrari</option>
+        <option value="FIAT">Fiat</option>
+        <option value="FORD">Ford</option>
+        <option value="HONDA">Honda</option>
+        <option value="HYUNDAI">Hyundai</option>
+        <option value="JAGUAR">Jaguar</option>
+        <option value="LAMBORGHINI">Lamborghini</option>
+        <option value="LAND_ROVER">Land Rover</option>
+        <option value="MAZDA">Mazda</option>
+        <option value="MERCEDES_BENZ">Mercedes Benz</option>
+        <option value="NISSAN">Nissan</option>
+        <option value="PEUGEOT">Peugeot</option>
+        <option value="PORSCHE">Porsche</option>
+        <option value="SUZUKI">Suzuki</option>
+        <option value="TOYOTA">Toyota</option>
+        <option value="VOLVO">Volvo</option>
+    </select>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-1 col-sm-11">
+    <button class="btn btn-default" type="reset">Reset</button>
+    <button class="btn btn-primary" type="submit">Create</button>
+</div>
+</div>
+        </form>
+        </div>
 
-    <!-- Jquery JS-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="/vendor/select2/select2.min.js"></script>
-    <script src="/vendor/datepicker/moment.min.js"></script>
-    <script src="/vendor/datepicker/daterangepicker.js"></script>
+        </div>
+        </div>
+        <!-- /#page-content-wrapper -->
 
-    <!-- Main JS-->
-    <script src="/js/global.js"></script>
+        </div>
+        <!-- /#wrapper -->
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+        <!-- Bootstrap core JavaScript -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
-</html>
-<!-- end document-->
+<script src="   /js/bootstrap2.min.js"></script>
+
+
+        <!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+
+</script>
+
+        </body>
+
+        </html>
