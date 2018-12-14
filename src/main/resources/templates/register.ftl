@@ -60,8 +60,7 @@
                 <h1 class="page-header">Add New Owner</h1>
 
                 <form id="create-user" action="/admin/register" name="registerForm" class="form-horizontal"
-                      method="POST"
-                ">
+                      method="POST">
 
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="name">First Name</label>

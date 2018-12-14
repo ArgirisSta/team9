@@ -43,6 +43,10 @@ public class Person {
         this.userType = userType;
     }
 
+    public Person() {
+
+    }
+
     public long getPersonId() {
         return personId;
     }
@@ -129,6 +133,7 @@ public class Person {
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
+                ", AFM='" + afm + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
