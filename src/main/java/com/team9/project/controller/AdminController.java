@@ -2,6 +2,7 @@ package com.team9.project.controller;
 
 import com.team9.project.domain.Person;
 import com.team9.project.form.RegisterForm;
+import com.team9.project.model.PersonModel;
 import com.team9.project.service.AdminService;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-public class AdminController {
+public class  AdminController {
 
     @Autowired
     private AdminService adminService;
@@ -49,13 +50,13 @@ public class AdminController {
     public String handleSearch(Model model, @RequestParam("criteria") String criteria) {
 
         String digitRegex = "\\d+";
-        List<Person> personList;
+        List<PersonModel> personList;
 
         if(criteria.matches(digitRegex)) {
-            personList = adminService.findPersonByAfm(criteria);
+            personList = adminService.findPersonsByAfm(criteria);
         }
         else {
-            personList = adminService.findPersonBySurname(criteria);
+            personList = adminService.findPersonsBySurname(criteria);
         }
 
         System.out.println(personList);

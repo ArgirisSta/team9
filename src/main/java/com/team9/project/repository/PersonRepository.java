@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    List<Person> findPersonByAfm(String afm);
+    List<Person> findPersonsByAfm(String afm);
 
-    List<Person> findPersonBySurname(String surname);
+    List<Person> findPersonsBySurname(String surname);
 }

@@ -1,22 +1,28 @@
 package com.team9.project.service;
 
+import com.team9.project.converters.PersonToPersonModelConverter;
 import com.team9.project.domain.Person;
 import com.team9.project.form.RegisterForm;
+import com.team9.project.model.PersonModel;
 import com.team9.project.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AdminServiceImp implements AdminService {
     @Autowired
     private PersonRepository personRepository;
 
+    @Autowired
+    private PersonToPersonModelConverter converter;
+
     public Person convertRegisterFormToPerson(RegisterForm registerForm) {
         Person person = new Person(registerForm.getAfm(), registerForm.getName(), registerForm.getSurname(),
                 registerForm.getAddress(), registerForm.getEmail(), registerForm.getPassword(),
-                registerForm.getCarBrand(), registerForm.getPlateNumber(),registerForm.getUserType());
+                registerForm.getCarBrand(), registerForm.getPlateNumber(), registerForm.getUserType());
         return person;
     }
 
@@ -26,13 +32,23 @@ public class AdminServiceImp implements AdminService {
     }
 
     @Override
-    public List<Person> findPersonByAfm(String afm) {
-        return personRepository.findPersonByAfm(afm);
+    public List<PersonModel> findPersonsByAfm(String afm) {
+        return
+                personRepository.findPersonsByAfm(afm)
+                        .stream()
+                        .map(person -> converter.mapToModel(person))
+                        .collect(Collectors.toList());
     }
 
     @Override
-    public List<Person> findPersonBySurname(String surname) {
-        return personRepository.findPersonBySurname(surname);
-    }
+    public List<PersonModel> findPersonsBySurname(String surname) {
+        return
 
+                personRepository.findPersonsBySurname(surname)
+                        .stream()
+                        .map(person -> converter.mapToModel(person))
+                        .collect(Collectors.toList());
+    }
 }
+
+
