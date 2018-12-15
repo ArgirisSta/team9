@@ -9,28 +9,27 @@ public class RegisterForm {
 
     @NotEmpty
     @Size(min = 3, max = 15, message = "Name should be between {min} and {max} characters.")
-    @Pattern(regexp = "\"^[a-zA-Z0-9]*$\"", message = "Invalid name")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$", message = "Invalid name")
     private String name;
 
     @NotEmpty
     @Size(min = 3, max = 25, message = "Surname should be between {min} and {max} characters.")
-    @Pattern(regexp = "\"^[a-zA-Z0-9]*$\"", message = "Invalid surname")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$", message = "Invalid surname")
     private String surname;
 
     @NotEmpty
     @Size(min = 5, max = 20, message = "AFM should be between {min} and {max} characters.")
-    @Pattern(regexp = "\"^[a-zA-Z0-9]*$\"", message = "Invalid afm")
+    @Pattern(regexp = "^[0-9]*$", message = "Invalid afm")
     private String afm;
 
     @NotEmpty
     @Size(min = 6, max = 40, message = "Password should be between {min} and {max} characters.")
-    @Pattern(regexp = "\"^[a-zA-Z0-9@#$%^&]*$\"", message = "Invalid password")
+    @Pattern(regexp = "^[a-zA-Z0-9@#$%^&]*$", message = "Invalid password")
     private String password;
 
     @Email
     @NotEmpty
-    @Size(min = 6, max = 20, message = "e-mail should be between {min} and {max} characters.")
-    @Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{1,63}$", message = "Invalid e-mail")
+    @Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$", message = "Invalid e-mail")
     private String email;
 
     @NotEmpty
@@ -41,7 +40,6 @@ public class RegisterForm {
 
     @NotEmpty
     @Size(min = 8, max = 8, message = "Plate number should be {max} characters.")
-    @Pattern(regexp = "\"^[a-zA-Z0-9]*$\"", message = "Invalid plate number.")
     private String plateNumber;
 
     private CarBrand carBrand;

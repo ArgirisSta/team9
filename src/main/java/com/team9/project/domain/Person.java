@@ -3,7 +3,7 @@
 import javax.persistence.*;
 import java.util.Collection;
 
- @Entity
+@Entity
 @Table(name = "Persons")
 public class Person {
     @Id
@@ -36,12 +36,26 @@ public class Person {
 
      public Person(long personId) {
          this.personId = personId;
-
      }
-    public  Person(){
+
+    public Person() {
 
     }
-     public long getPersonId() {
+
+    public Person(String afm, String name, String surname, String address, String email, String password,
+                  CarBrand carBrand, String plateNumber, UserType userType) {
+        this.afm = afm;
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.carBrand = carBrand;
+        this.plateNumber = plateNumber;
+        this.userType = userType;
+    }
+
+    public long getPersonId() {
         return personId;
     }
 
@@ -127,6 +141,7 @@ public class Person {
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
+                ", AFM='" + afm + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

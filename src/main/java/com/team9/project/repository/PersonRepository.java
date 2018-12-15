@@ -27,5 +27,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     Optional<Person> findByAfm(String afm);
 
+    List<Person> findPersonsByAfm(String afm);
 
+    List<Person> findPersonsBySurname(String surname);
 }
