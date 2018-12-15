@@ -8,19 +8,12 @@
     <title>Index</title>
 </head>
 <body>
-<#import "/spring.ftl" as spring />
-
-<form class="example" action="/admin/search" name="searchForm" method="GET">
-    <input type="text" placeholder="Search by AFM or Surname" name="criteria">
-    <button type="submit"> Search Person</button>
-</form>
-
-<#if foundPersonList??>
-    <#list foundPersonList as person>
-    <b> ${person} </b>
-    </#list>
-<#elseif searchError??>
-    ${searchError}
+<h1>THIS IS INDEX</h1>
+<<<<<<< HEAD
+=======
+<#if person??>
+${person}
 </#if>
+>>>>>>> 46b00b9d5d5e902ffe4d1ab83b9d1a9223a72ffc
 </body>
 </html>

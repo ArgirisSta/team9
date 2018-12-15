@@ -1,8 +1,9 @@
  package com.team9.project.domain;
 
 import javax.persistence.*;
+import java.util.Collection;
 
-@Entity
+ @Entity
 @Table(name = "Persons")
 public class Person {
     @Id
@@ -29,25 +30,18 @@ public class Person {
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", length = 15, nullable = false)
     private UserType userType;
+    @OneToMany(mappedBy="repairId",
+            targetEntity=Repair.class)
+    private Collection repairs;
 
-    public Person(String afm, String name, String surname, String address, String email, String password,
-                  CarBrand carBrand, String plateNumber, UserType userType) {
-        this.afm = afm;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.email = email;
-        this.password = password;
-        this.carBrand = carBrand;
-        this.plateNumber = plateNumber;
-        this.userType = userType;
-    }
+     public Person(long personId) {
+         this.personId = personId;
 
-    public Person() {
+     }
+    public  Person(){
 
     }
-
-    public long getPersonId() {
+     public long getPersonId() {
         return personId;
     }
 
@@ -133,7 +127,6 @@ public class Person {
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", AFM='" + afm + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

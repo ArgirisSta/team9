@@ -1,7 +1,9 @@
 package com.team9.project.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "Repairs")
@@ -23,10 +25,18 @@ public class Repair {
     private double price;
     @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "person_id")
-    private Person owner;
+    Person owner;
     @Column(name = "comment", length = 30)
     private String comment;
 
+    public Repair(LocalDateTime date, RepairStatus repairStatus, RepairType repairType, double price, Person owner, String comments){
+        this.repairDate = date;
+        this.repairStatus = repairStatus;
+        this.repairType = repairType;
+        this.price = price;
+        this.owner = owner;
+        this.comment = comments;
+    }
     public Repair(long repairId, LocalDateTime repairDate, RepairStatus repairStatus, RepairType repairType, double price, Person owner, String comment) {
         this.repairId = repairId;
         this.repairDate = repairDate;
@@ -35,6 +45,16 @@ public class Repair {
         this.price = price;
         this.owner = owner;
         this.comment = comment;
+    }
+    public Repair(){
+    }
+
+    public long getRepairId() {
+        return repairId;
+    }
+
+    public void setRepairId(long repairId) {
+        this.repairId = repairId;
     }
 
     public LocalDateTime getRepairDate() {

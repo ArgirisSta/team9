@@ -11,4 +11,11 @@ public enum RepairStatus {
     RepairStatus(String repairStatus) {
         this.repairStatus = repairStatus;
     }
+
+    public String getCategory() {
+        return repairStatus;
+    }
+
+
+
 }
