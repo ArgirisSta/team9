@@ -33,6 +33,21 @@ public class PersonServiceImpl implements PersonService {
         return (Person) personRepository.findByemailAndPassword(email, password);
     }
 
+    @Override
+    public List<Person> getAllPersons() {
+        return null;
+    }
+
+    @Override
+    public Person createPerson(String afm, String name, String surname, String address, String email, String password, String carBrand, String plateNumber, String userType) {
+        return null;
+    }
+    @Override
+    public Person findByAfm(String afm){
+        return personRepository.findByAfm(afm)
+                .orElseThrow(PersonNotFoundException::new);
+
+    }
 
 
 

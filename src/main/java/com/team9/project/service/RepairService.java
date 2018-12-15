@@ -2,15 +2,17 @@ package com.team9.project.service;
 
 import com.team9.project.domain.Person;
 import com.team9.project.domain.Repair;
+import com.team9.project.model.RepairModel;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public interface RepairService {
 
-    List<Repair> findAll();
+    List<RepairModel> findAll();
     Repair findById(Long Id);
     List<Repair> findRepairByPersonId(Person person);
-    Repair save(Repair repair);
+    Repair create(RepairModel repairModel);
+    Repair update(RepairModel repairModel);
+
 
 }
