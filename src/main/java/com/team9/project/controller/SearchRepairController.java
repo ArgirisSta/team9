@@ -44,8 +44,8 @@ public class SearchRepairController {
     }
 
     private List<RepairModel> findrepairs(SearchRepairForm searchForm) {
-        LocalDateTime fromDate = searchForm.getFromdate();
-        LocalDateTime toDate = searchForm.getTodate();
+        LocalDateTime fromDate = searchForm.getFromDate();
+        LocalDateTime toDate = searchForm.getToDate();
         String Afm = searchForm.getAfm();
         String Plate = searchForm.getPlate();
 
