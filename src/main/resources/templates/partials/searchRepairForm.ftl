@@ -7,8 +7,8 @@
 
                     <div class="form-group">
 
-                        <input class="form-control" type="datetime-local" name="FromDate" id="date" placeholder="datetime">
-                        <input class="form-control" type="datetime-local" name="ToDate" id="date" placeholder="datetime">
+                        <input class="form-control" type="datetime-local" name="fromDate" id="fromDate" placeholder="datetime">
+                        <input class="form-control" type="datetime-local" name="toDate" id="toDate" placeholder="datetime">
                         <input class="form-control" type="text" name="Afm" id="Afm" placeholder="OnwerAfm">
                         <input class="form-control" type="text" name="Plate" id="Plate" placeholder="Plate">
                         </div>

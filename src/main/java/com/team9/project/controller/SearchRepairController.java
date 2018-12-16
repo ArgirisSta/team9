@@ -43,17 +43,25 @@ public class SearchRepairController {
     }
 
     private List<RepairModel> findrepairs(SearchRepairForm searchForm) {
-        LocalDateTime fromDate = searchForm.getFromdate();
-        LocalDateTime toDate = searchForm.getTodate();
+        LocalDateTime fromDate = searchForm.getFromDate();
+        LocalDateTime toDate = searchForm.getToDate();
         String Afm = searchForm.getAfm();
         String Plate = searchForm.getPlate();
 
 
-        //if ( (LocalDateTime.parse(fromDate)!= null && toDate !=null )) {
-         //   return repairService.findByrepairDateBetween(fromDate,toDate);
-        //}
-
-        return repairService.findByrepairDateBetween(fromDate,toDate);
+        if ( (fromDate!= null && toDate !=null )) {
+            return repairService.findByrepairDateBetween(fromDate,toDate);
+        }
+        if ( (fromDate!= null && toDate ==null )) {
+            return repairService.findByrepairDateBetween(fromDate,fromDate);
+        }
+        if(!(Afm.isEmpty())){
+            return repairService.findByOwnerAfm(Afm);
+        }
+        if(!(Plate.isEmpty())){
+            return repairService.findByPlate(Plate);
+        }
+        return repairService.findAll();
 
 
     }

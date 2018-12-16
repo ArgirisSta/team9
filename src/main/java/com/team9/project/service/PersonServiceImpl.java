@@ -50,5 +50,13 @@ public class PersonServiceImpl implements PersonService {
     }
 
 
+    @Override
+    public   Person findByplateNumer(String plate){
+        return personRepository.findByplateNumber(plate);
+
+    }
+
+
+
 
 }

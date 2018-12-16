@@ -78,10 +78,6 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
         // }
 
         RepairModel repairModel = mapper.mapToRepairModel(repairForm);
-        logger.info("=============================");
-        logger.info("====Print repairModel====");
-        logger.info(repairModel.toString());
-
         repairService.update(repairModel);
         return "redirect:/";
     }
