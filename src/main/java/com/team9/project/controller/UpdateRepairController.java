@@ -1,11 +1,9 @@
 package com.team9.project.controller;
 
-import com.team9.project.domain.CarBrand;
 import com.team9.project.domain.Person;
 import com.team9.project.domain.Repair;
 import com.team9.project.form.RepairForm;
 import com.team9.project.model.RepairModel;
-import com.team9.project.service.PersonServiceImpl;
 import com.team9.project.service.RepairServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +14,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.*;
+import java.util.List;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/admin/addRepair")
 public class UpdateRepairController { private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private static final String REPAIR_FORM = "repairForm";
@@ -32,11 +30,11 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
     private RepairFormToRepairModel mapper;
 
 
-    @GetMapping("/addRepair")
+    @GetMapping("/admin/addRepair")
     public String addrepairFormGet (Model model) {
         model.addAttribute(REPAIR_FORM,
                 new RepairForm());
-        return "addRepairForm";
+        return "/admin/addRepair";
     }
 
     @PostMapping(value = "/addRepair")

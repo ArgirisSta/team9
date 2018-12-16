@@ -14,7 +14,7 @@
     <div>
         <label for="date">Date</label>
        <@spring.bind "repairForm.date"/>
-        <input type="datetime-local" value =${repairForm.date}  name="date" id="date" placeholder=${repairForm.date}>
+        <input type="datetime" value =${repairForm.date}  name="date" id="date" placeholder=${repairForm.date}>
     </div>
 
     <div>
