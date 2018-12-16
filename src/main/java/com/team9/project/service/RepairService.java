@@ -4,6 +4,7 @@ import com.team9.project.domain.Person;
 import com.team9.project.domain.Repair;
 import com.team9.project.model.RepairModel;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface RepairService {
@@ -13,6 +14,7 @@ public interface RepairService {
     List<Repair> findRepairByPersonId(Person person);
     Repair create(RepairModel repairModel);
     Repair update(RepairModel repairModel);
+    List<RepairModel> findByrepairDateBetween(LocalDateTime fromDate, LocalDateTime toDate);
 
 
 }

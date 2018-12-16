@@ -15,6 +15,7 @@ public class RepairFormToRepairModel {
         repairModel.setAfm(repairForm.getAfm());
         repairModel.setRepairStatus(repairForm.getRepairStatus());
         repairModel.setRepairType(repairForm.getRepairType());
+        repairModel.setPrice(repairForm.getPrice());
         return repairModel;
     }
 }

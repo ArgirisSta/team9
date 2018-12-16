@@ -21,7 +21,7 @@ import java.util.*;
 
 @Controller
 @RequestMapping("/")
-public class RepairController { private final Logger logger = LoggerFactory.getLogger(this.getClass());
+public class UpdateRepairController { private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private static final String REPAIR_FORM = "repairForm";
 

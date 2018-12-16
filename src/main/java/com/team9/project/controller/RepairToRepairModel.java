@@ -16,6 +16,7 @@ public class RepairToRepairModel {
         repairModel.setAfm(repair.getOwner().getAfm());
         repairModel.setRepairStatus(repair.getRepairStatus());
         repairModel.setRepairType(repair.getRepairType());
+        repairModel.setPrice(repair.getPrice());
         return repairModel;
     }
 }
