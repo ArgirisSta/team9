@@ -2,7 +2,7 @@
 
 
 
-          <form action="/searchRepairResult" class="navbar-form navbar-right" id="searchForm" name="searchForm"
+          <form action="/admin/searchRepairResult" class="navbar-form navbar-right" id="searchForm" name="searchForm"
                       style="margin-left:37%; float: none!important;">
 
                     <div class="form-group">
@@ -16,7 +16,7 @@
                 </form>
 
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                        <#include "repairs.ftl">
+                        <#include "../partials/repairs.ftl">
                     </div>
 
 

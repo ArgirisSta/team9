@@ -1,7 +1,6 @@
 package com.team9.project.controller;
 
 import com.team9.project.form.RepairForm;
-import com.team9.project.model.RepairModel;
 import com.team9.project.service.RepairServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,16 +23,16 @@ public class DeleteRepairController {
     private static final String REPAIR_FORM = "repairForm";
 
 
-    @GetMapping("/deleteRepair/{id}")
+    @GetMapping("/admin/deleteRepair/{id}")
     public String deleteRepairGet (Model model, @PathVariable(name = "id") String id ) {
 
         RepairForm repairForm = repairService.locate(Long.valueOf(id));
         model.addAttribute(REPAIR_FORM,
                 repairForm);
-        return "deleteRepairForm";
+        return "admin/deleteRepairForm";
     }
 
-    @PostMapping(value = "/deleteRepair")
+    @PostMapping(value = "/admin/deleteRepair")
     public String deleteRepairGet(Model model,
                                   @Valid @ModelAttribute(REPAIR_FORM)
                                           RepairForm repairForm,

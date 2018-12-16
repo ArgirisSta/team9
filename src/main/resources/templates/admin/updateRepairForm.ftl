@@ -2,7 +2,7 @@
 <h2 class="hello-title">Register</h2>
 
 
-<form action="/updateRepair" name="repairForm" method="POST">
+<form action="/admin/updateRepair" name="repairForm" method="POST">
         <div>
             <@spring.bind "repairForm.id"/>
                 <input type="hidden" value=${repairForm.id} name="id" id="id" placeholder=${repairForm.id}>

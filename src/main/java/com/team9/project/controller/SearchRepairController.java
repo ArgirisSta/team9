@@ -29,7 +29,7 @@ public class SearchRepairController {
     @GetMapping(value = "/admin/searchRepair")
     public String search(Model model) {
         model.addAttribute("searchForm", new SearchRepairForm());
-        return "/admin/searchRepair";
+        return "/admin/searchRepairForm";
     }
 
     @GetMapping(value = "/admin/searchRepairResult")
@@ -39,7 +39,7 @@ public class SearchRepairController {
         logger.info("====Print repairModel====");
         logger.info(repairs.toString());
         model.addAttribute(REPAIRS_ATTR, repairs);
-        return "searchRepairForm";
+        return "/admin/searchRepairForm";
     }
 
     private List<RepairModel> findrepairs(SearchRepairForm searchForm) {

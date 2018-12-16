@@ -18,7 +18,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/admin/addRepair")
+@RequestMapping("/")
 public class UpdateRepairController { private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private static final String REPAIR_FORM = "repairForm";
@@ -55,16 +55,16 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
         return "redirect:/";
     }
 
-    @GetMapping("/updateRepair/{id}")
+    @GetMapping("/admin/updateRepair/{id}")
     public String updateRepairGet (Model model, @PathVariable(name = "id") String id ) {
 
         RepairForm repairForm = repairService.locate(Long.valueOf(id));
         model.addAttribute(REPAIR_FORM,
                 repairForm);
-        return "updateRepairForm";
+        return "admin/updateRepairForm";
     }
 
-    @PostMapping(value = "/updateRepair")
+    @PostMapping(value = "/admin/updateRepair")
     public String updateRepairGet(Model model,
                            @Valid @ModelAttribute(REPAIR_FORM)
                                    RepairForm repairForm,
