@@ -12,6 +12,7 @@
         <th>RepairPrice</th>
         <th>RepairComments</th>
         <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -33,6 +34,10 @@
             <a class="btn" href="/updateRepair/${repair.id}">Edit</a>
 
         </td>
+        <td class="text-right">
+                    <a class="btn" href="/deleteRepair/${repair.id}">Delete</a>
+
+                </td>
     </tr>
     </#list>
 
