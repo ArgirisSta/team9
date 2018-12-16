@@ -26,5 +26,7 @@ public interface PersonService {
     Person createPerson(String afm, String name, String surname, String address, String email, String password,
                         String carBrand, String plateNumber, String userType);
 
+    Person findByplateNumer(String plate);
+
 
 }

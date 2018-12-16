@@ -10,7 +10,6 @@ import com.team9.project.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -90,5 +89,21 @@ public class RepairServiceImpl implements RepairService {
                 .collect(Collectors.toList());
 
     }
+    public List<RepairModel> findByOwnerAfm(String Afm){
+        Person person = personService.findByAfm(Afm);
+        List<Repair> repairs = this.repairRepository.findByowner(person);
+        return repairs
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
 
+    public List<RepairModel> findByPlate(String plate){
+        Person person = personService.findByplateNumer(plate);
+        List<Repair> repairs = this.repairRepository.findByowner(person);
+        return repairs
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
 }

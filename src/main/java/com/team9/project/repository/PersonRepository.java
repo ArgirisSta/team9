@@ -30,4 +30,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     List<Person> findPersonsByAfm(String afm);
 
     List<Person> findPersonsBySurname(String surname);
+
+    Person findByplateNumber(String Plate);
+
 }
