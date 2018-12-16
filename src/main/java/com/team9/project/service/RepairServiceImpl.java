@@ -7,6 +7,8 @@ import com.team9.project.exception.PersonNotFoundException;
 import com.team9.project.form.RepairForm;
 import com.team9.project.model.RepairModel;
 import com.team9.project.repository.RepairRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class RepairServiceImpl implements RepairService {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     RepairRepository repairRepository;
@@ -43,7 +47,7 @@ public class RepairServiceImpl implements RepairService {
 
     public List<Repair> findRepairByPersonId(Person person){
         return
-                repairRepository.findByowner(person);
+                repairRepository.findByOwner(person);
     }
 
 
@@ -91,8 +95,9 @@ public class RepairServiceImpl implements RepairService {
     }
     public List<RepairModel> findByOwnerAfm(String Afm){
         Person person = personService.findByAfm(Afm);
-        List<Repair> repairs = this.repairRepository.findByowner(person);
-        return repairs
+
+        List<Repair> repairs = (List<Repair>) person.getRepairs();
+        return  repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
@@ -100,7 +105,8 @@ public class RepairServiceImpl implements RepairService {
 
     public List<RepairModel> findByPlate(String plate){
         Person person = personService.findByplateNumer(plate);
-        List<Repair> repairs = this.repairRepository.findByowner(person);
+
+        List<Repair> repairs = (List<Repair>) person.getRepairs();
         return repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
