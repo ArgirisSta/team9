@@ -18,7 +18,7 @@ public class RegisterForm {
     private String surname;
 
     @NotEmpty
-    @Size(min = 5, max = 20, message = "AFM should be between {min} and {max} characters.")
+    @Size(min = 9, max = 9, message = "AFM should be between {max} characters.")
     @Pattern(regexp = "^[0-9]*$", message = "Invalid afm")
     private String afm;
 

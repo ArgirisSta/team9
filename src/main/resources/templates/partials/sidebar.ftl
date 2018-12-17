@@ -1,7 +1,7 @@
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            <a href="/"> <img src="/images/logo.png" width="200px" height="80px"></a>
+            <a href="/"> <img src="/images/logo1.png" width="200px" height="80px"></a>
         </li>
         <li>
             <a href="/admin/index">Home</a>

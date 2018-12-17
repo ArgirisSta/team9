@@ -121,10 +121,7 @@
             </select>
         </div>
     </div>
-    <div class="form-control">
-        <div class="col-sm-offset-1 col-sm-11">
             <button class="btn btn-default" type="reset">Reset</button>
-            <button class="btn btn-primary" type="submit" href="admin/Users">Add</button>
-        </div>
-    </div>
+            <button class="btn btn-primary" type="submit" href="admin/index">Add</button>
+
 </form>

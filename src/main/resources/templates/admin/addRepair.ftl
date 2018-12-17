@@ -5,7 +5,7 @@
 
     <#include "/partials/head.ftl">
 
-    <link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css"/><title>Add New Repair</title>
+    <title>Add New Repair</title>
 
     <!-- Bootstrap core CSS -->
     <#include "/partials/styles.ftl">
