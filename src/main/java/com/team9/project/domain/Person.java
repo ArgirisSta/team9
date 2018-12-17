@@ -1,6 +1,7 @@
  package com.team9.project.domain;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "Persons")
@@ -29,6 +30,26 @@ public class Person {
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", length = 15, nullable = false)
     private UserType userType;
+    @OneToMany(mappedBy="repairId",
+            targetEntity=Repair.class)
+    private Collection repairs;
+
+
+    public Collection getRepairs() {
+        return repairs;
+    }
+
+    public void setRepairs(Collection repairs) {
+        this.repairs = repairs;
+    }
+
+    public Person(long personId) {
+         this.personId = personId;
+     }
+
+    public Person() {
+
+    }
 
     public Person(String afm, String name, String surname, String address, String email, String password,
                   CarBrand carBrand, String plateNumber, UserType userType) {
@@ -129,6 +150,7 @@ public class Person {
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
+                ", AFM='" + afm + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

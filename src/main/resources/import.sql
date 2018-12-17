@@ -6,8 +6,9 @@ INSERT INTO persons (address, afm, car_brand, email, name, password, plate_numbe
 INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('Lori', 'E123456789', 'LAND_ROVER', 'rov@abc.com', 'Argiris', '1234', 'AAA-1234', 'Stamatopoulos', 'ADMIN');
 
 // Repairs
-INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 250, '2018-12-25 9:30', 'Waiting', 'Minor', 1);
-INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Lights replacement', 550, '2018-12-22 10:45', 'Waiting', 'Minor', 2);
-INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 4250, '2017-12-25 14:25', 'Completed', 'Major', 3);
-INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 350, '2015-12-25 18:00', 'Completed', 'Major', 4);
-INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 330, '2022-12-25 12:00', 'Completed', 'Minor', 5);
+
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 250, '2018-12-25 9:30', 'WAITING', 'MINOR', 1);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Lights replacement', 550, '2018-12-22 10:45', 'WAITING', 'MAJOR', 2);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 4250, '2017-12-25 14:25', 'COMPLETED', 'MAJOR', 3);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 350, '2015-12-25 18:00', 'WAITING', 'MAJOR', 4);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 330, '2022-12-25 12:00', 'COMPLETED', 'MINOR', 1);
