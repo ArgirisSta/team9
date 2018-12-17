@@ -79,6 +79,12 @@ a:hover {
     bottom: 9px;
     right: 0; }
 
+
+textarea{
+  margin-left: 26px;
+  margin-right: auto;
+
+}
 .form-control {
   border: 1px solid #333;
   border-top: none;
@@ -105,6 +111,7 @@ a:hover {
     font-size: 13px;
     color: #333;
     font-family: "Poppins-Regular"; }
+
 
 select {
   -moz-appearance: none;
@@ -206,3 +213,7 @@ button {
     margin-top: 60px; } }
 
 /*# sourceMappingURL=style.css.map */
+#textarea {
+    margin-right: auto;
+    margin-left: 26px;
+}

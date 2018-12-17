@@ -55,7 +55,7 @@
             <div class="col-sm-11">
        <@spring.bind "repairForm.date"/>
 
-                <input type="datetime" value =${repairForm.date}  name="date" id="date" placeholder=${repairForm.date}>
+                <input class="form-control" type="datetime" value =${repairForm.date}  name="date" id="date" placeholder=${repairForm.date}>
             </div>
         </div>
 
@@ -63,7 +63,7 @@
              <@spring.bind "repairForm.repairStatus"/>
              <label class="col-sm-1 control-label"for="repairStatus">Repairstatus</label>
              <div class="col-sm-11">
-                <input type="text" value= ${repairForm.repairStatus} name="repairStatus" id="repairStatus" placeholder=${repairForm.repairStatus}>
+                 <input class="form-control" type="text" value= ${repairForm.repairStatus} name="repairStatus" id="repairStatus" placeholder=${repairForm.repairStatus}>
              </div>
          </div>
 
@@ -72,7 +72,7 @@
             <@spring.bind "repairForm.repairType"/>
              <label class="col-sm-1 control-label" for="repairType">RepairType</label>
              <div class="col-sm-11">
-                 <input type="repairType" value =${repairForm.repairType} name="repairType" id="repairType" placeholder=${repairForm.repairType}>
+                 <input class="form-control" type="repairType" value =${repairForm.repairType} name="repairType" id="repairType" placeholder=${repairForm.repairType}>
 
              </div>
          </div>
@@ -82,7 +82,7 @@
                 <@spring.bind "repairForm.price"/>
             <label class="col-sm-1 control-label" for="price">Price</label>
             <div class="col-sm-11">
-            <input type="number" value =${repairForm.price} name="price" id="price" placeholder=${repairForm.price}>
+                <input class="form-control" type="number" value =${repairForm.price} name="price" id="price" placeholder=${repairForm.price}>
 
             </div>
         </div>
@@ -92,7 +92,7 @@
                <@spring.bind "repairForm.afm"/>
             <label class="col-sm-1 control-label" for="afm">Owner AFM</label>
             <div class="col-sm-11">
-               <input type="afm" value =${repairForm.afm}   name="afm" id="afm" placeholder=${repairForm.afm} >
+                <input class="form-control" type="afm" value =${repairForm.afm}   name="afm" id="afm" placeholder=${repairForm.afm} >
 
             </div>
         </div>
@@ -102,7 +102,7 @@
                            <@spring.bind "repairForm.comments"/>
                 <label class="col-sm-1 control-label"="comments">Comments</label>
                 <div class="col-sm-11">
-                           <input type="comments" value =${repairForm.comments}  name="comments" id="comments" placeholder=${repairForm.comments}>
+                    <input class="form-control" type="comments" value =${repairForm.comments}  name="comments" id="comments" placeholder=${repairForm.comments}>
 
                 </div>
             </div>
