@@ -43,7 +43,7 @@ public class RepairServiceImpl implements RepairService {
 
     public List<Repair> findRepairByPersonId(Person person){
         return
-                repairRepository.findByowner(person);
+                repairRepository.findByOwner(person);
     }
 
 
@@ -91,7 +91,7 @@ public class RepairServiceImpl implements RepairService {
     }
     public List<RepairModel> findByOwnerAfm(String Afm){
         Person person = personService.findByAfm(Afm);
-        List<Repair> repairs = this.repairRepository.findByowner(person);
+        List<Repair> repairs = this.repairRepository.findByOwner(person);
         return repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
@@ -100,7 +100,7 @@ public class RepairServiceImpl implements RepairService {
 
     public List<RepairModel> findByPlate(String plate){
         Person person = personService.findByplateNumer(plate);
-        List<Repair> repairs = this.repairRepository.findByowner(person);
+        List<Repair> repairs = this.repairRepository.findByOwner(person);
         return repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))

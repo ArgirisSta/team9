@@ -31,11 +31,11 @@
 
 
         <td class="text-right">
-            <a class="btn" href="/updateRepair/${repair.id}">Edit</a>
+            <a class="btn btn-primary" href="/admin/updateRepair/${repair.id}">Edit</a>
 
         </td>
         <td class="text-right">
-                    <a class="btn" href="/deleteRepair/${repair.id}">Delete</a>
+                    <a class="btn btn-danger" href="/admin/deleteRepair/${repair.id}">Delete</a>
 
                 </td>
     </tr>

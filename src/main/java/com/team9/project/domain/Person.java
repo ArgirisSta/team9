@@ -45,7 +45,16 @@ public class Person {
             targetEntity=Repair.class)
     private Collection repairs;
 
-     public Person(long personId) {
+
+    public Collection getRepairs() {
+        return repairs;
+    }
+
+    public void setRepairs(Collection repairs) {
+        this.repairs = repairs;
+    }
+
+    public Person(long personId) {
          this.personId = personId;
      }
 

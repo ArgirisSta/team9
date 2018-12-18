@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Poppins-Regular";
-  src: url("../fonts/poppins/Poppins-Regular.ttf"); }
+  src: url("/fonts/poppins/Poppins-Regular.ttf"); }
 @font-face {
   font-family: "Poppins-SemiBold";
-  src: url("../fonts/poppins/Poppins-SemiBold.ttf"); }
+  src: url("/fonts/poppins/Poppins-SemiBold.ttf"); }
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -66,9 +66,11 @@ a:hover {
 .form-group {
   display: flex; }
   .form-group input {
-    width: 50%; }
+    width: 94%; }
     .form-group input:first-child {
-      margin-right: 25px; }
+      margin-right: 25px;
+      margin-left: 25px;
+    }
 
 .form-wrapper {
   position: relative; }
@@ -77,6 +79,12 @@ a:hover {
     bottom: 9px;
     right: 0; }
 
+
+textarea{
+  margin-left: 26px;
+  margin-right: auto;
+
+}
 .form-control {
   border: 1px solid #333;
   border-top: none;
@@ -103,6 +111,7 @@ a:hover {
     font-size: 13px;
     color: #333;
     font-family: "Poppins-Regular"; }
+
 
 select {
   -moz-appearance: none;
@@ -204,3 +213,9 @@ button {
     margin-top: 60px; } }
 
 /*# sourceMappingURL=style.css.map */
+#textarea {
+    margin-right: auto;
+    margin-left: 26px;
+    border: 1px solid;
+    border-radius: 4px;
+}

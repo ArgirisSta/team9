@@ -5,74 +5,74 @@
 
     <#include "/partials/head.ftl">
 
-    <title>Add New Repair</title>
+    <title>Delete Repairs</title>
 
     <!-- Bootstrap core CSS -->
     <#include "/partials/styles.ftl">
-
-    <!-- Custom styles for this template -->
-
 
 </head>
 
 <body>
 
+
+
 <#import "/spring.ftl" as spring />
+
 
 <div id="wrapper">
 
     <!-- Sidebar -->
-   <#include "/partials/sidebar.ftl">
+
+    <#include "/partials/sidebar.ftl">
+    <!-- Sidebar -->
+
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
+
     <#include "/partials/topnav.ftl">
 
-    <#include "/partials/searchByAfm.ftl">
+        <#include "/partials/searchByAfm.ftl">
+
 
     <div id="page-content-wrapper">
         <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle" style="float: left">Toggle Menu</a>
+
         <div class="container-fluid">
             <#import "/spring.ftl" as spring />
-            <h1 class="page-header">Add Repair Service</h1>
+            <h2 class="hello-title">Delete Repair</h2>
 
-            <form action="/admin/addRepair" name="repairForm" method="POST" class="form-horizontal">
+            <form action="/admin/deleteRepair" name="repairForm" method="POST" class="form-horizontal">
 
+                <div class="form-group">
+            <@spring.bind "repairForm.id"/>
+                    <input type="hidden" value=${repairForm.id} name="id" id="id" placeholder=${repairForm.id}>
 
+                </div>
                 <div class="form-group">
 
                     <label class="col-sm-1 control-label" for="date">Date</label>
                     <div class="col-sm-11">
-                     <@spring.bind "repairForm.date"/>
+       <@spring.bind "repairForm.date"/>
 
-                        <input class="form-control" type="datetime-local"  name="date" id="date" placeholder="Date">
+                        <input class="form-control" type="datetime" value =${repairForm.date}  name="date" id="date" placeholder=${repairForm.date}>
                     </div>
                 </div>
 
                 <div class="form-group">
              <@spring.bind "repairForm.repairStatus"/>
-                    <label class="col-sm-1 control-label"for="repairStatus">Repair Status</label>
+                    <label class="col-sm-1 control-label"for="repairStatus">Repairstatus</label>
                     <div class="col-sm-11">
-                        <select class="form-control" id="repairStatus" name="repairStatus">
-                            <option value="WAITING" disabled selected>WAITING</option>
-                            <option value="IN PROGRESS">IN PROGRESS</option>
-                            <option value="COMPLETED">COMPLETED</option>
-
-                        </select>
+                        <input class="form-control" type="text" value= ${repairForm.repairStatus} name="repairStatus" id="repairStatus" placeholder=${repairForm.repairStatus}>
                     </div>
                 </div>
 
                 <div class="form-group">
 
             <@spring.bind "repairForm.repairType"/>
-                    <label class="col-sm-1 control-label" for="repairType">Repair Type</label>
+                    <label class="col-sm-1 control-label" for="repairType">RepairType</label>
                     <div class="col-sm-11">
-                        <select class="form-control" id="repairType" name="repairType">
-                            <option value="" disabled selected>Select Repair Type</option>
-                            <option value="MINOR">MINOR</option>
-                            <option value="MAJOR">MAJOR</option>
-
-                        </select>
+                        <input class="form-control" type="repairType" value =${repairForm.repairType} name="repairType" id="repairType" placeholder=${repairForm.repairType}>
 
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                 <@spring.bind "repairForm.price"/>
                     <label class="col-sm-1 control-label" for="price">Price</label>
                     <div class="col-sm-11">
-                        <input class="form-control" type="number"  name="price" id="price" placeholder="Price">
+                        <input class="form-control" type="number" value =${repairForm.price} name="price" id="price" placeholder=${repairForm.price}>
 
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                <@spring.bind "repairForm.afm"/>
                     <label class="col-sm-1 control-label" for="afm">Owner AFM</label>
                     <div class="col-sm-11">
-                        <input class="form-control" type="text"    name="afm" id="afm" placeholder="AFM" >
+                        <input class="form-control" type="afm" value =${repairForm.afm}   name="afm" id="afm" placeholder=${repairForm.afm} >
 
                     </div>
                 </div>
@@ -100,34 +100,30 @@
                 <div class="form-group">
 
                            <@spring.bind "repairForm.comments"/>
-                    <label class="col-sm-1 control-label"="comments">Description</label>
+                    <label class="col-sm-1 control-label"="comments">Comments</label>
                     <div class="col-sm-11">
-                        <textarea id="textarea" rows="4" cols="50" name="comments" class="form-group" style="margin-left: 26px"></textarea>
+                        <input class="form-control" type="comments" value =${repairForm.comments}  name="comments" id="comments" placeholder=${repairForm.comments}>
+
                     </div>
                 </div>
 
                 <div class="form-group">
 
                     <div class="col-sm-offset-1 col-sm-11">
-                        <button class="btn btn-primary" type="submit" >Add Repair Service</button>
+                        <button class="btn btn-danger" type="submit" >Delete Repair</button>
                     </div>
                 </div>
             </form>
 
-
-
         </div>
+
+
     </div>
     <!-- /#page-content-wrapper -->
-
 </div>
-<!-- /#wrapper -->
-
-<!-- Bootstrap core JavaScript -->
+</div>
 
 <#include "/partials/scripts.ftl">
-
-
 
 <!-- Menu Toggle Script -->
 <script>

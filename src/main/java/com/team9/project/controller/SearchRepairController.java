@@ -2,7 +2,6 @@ package com.team9.project.controller;
 
 import com.team9.project.form.SearchRepairForm;
 import com.team9.project.model.RepairModel;
-import com.team9.project.service.RepairService;
 import com.team9.project.service.RepairServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
- import java.util.List;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -27,20 +26,20 @@ public class SearchRepairController {
     RepairServiceImpl repairService;
     private static final String REPAIRS_ATTR = "repairs";
 
-    @GetMapping(value = "/searchRepair")
+    @GetMapping(value = "/admin/searchRepair")
     public String search(Model model) {
         model.addAttribute("searchForm", new SearchRepairForm());
-        return "searchRepairForm";
+        return "/admin/searchRepairForm";
     }
 
-    @GetMapping(value = "/searchRepairResult")
+    @GetMapping(value = "/admin/searchRepairResult")
     public String searchForRepairs(Model model, @ModelAttribute(name = "searchForm") SearchRepairForm searchForm) {
         List<RepairModel> repairs = findrepairs(searchForm);
         logger.info("=============================");
         logger.info("====Print repairModel====");
         logger.info(repairs.toString());
         model.addAttribute(REPAIRS_ATTR, repairs);
-        return "searchRepairForm";
+        return "/admin/searchRepairForm";
     }
 
     private List<RepairModel> findrepairs(SearchRepairForm searchForm) {
@@ -66,7 +65,4 @@ public class SearchRepairController {
 
 
     }
-    }
-
-
-
+}

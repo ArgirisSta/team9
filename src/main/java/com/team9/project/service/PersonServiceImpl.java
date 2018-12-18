@@ -2,7 +2,6 @@ package com.team9.project.service;
 
 
 import com.team9.project.domain.Person;
-import com.team9.project.domain.Repair;
 import com.team9.project.exception.PersonNotFoundException;
 import com.team9.project.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +55,8 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.findByplateNumber(plate);
 
     }
+
+
 
 
 }
