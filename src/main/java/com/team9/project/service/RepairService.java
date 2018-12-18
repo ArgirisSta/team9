@@ -16,6 +16,6 @@ public interface RepairService {
     Repair update(RepairModel repairModel);
     List<RepairModel> findByrepairDateBetween(LocalDateTime fromDate, LocalDateTime toDate);
     List<RepairModel> findByOwnerAfm(String Afm);
-
+    void delete(Long id);
 
 }

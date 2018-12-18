@@ -106,4 +106,10 @@ public class RepairServiceImpl implements RepairService {
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void delete(Long id){
+        repairRepository.deleteById(id);
+    }
+
 }

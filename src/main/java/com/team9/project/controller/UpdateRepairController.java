@@ -54,7 +54,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
 
         RepairModel repairModel = mapper.mapToRepairModel(repairForm);
         repairService.create(repairModel);
-        return "redirect:/";
+        return "redirect:/admin/searchRepair";
     }
 
     @GetMapping("/updateRepair/{id}")
@@ -85,7 +85,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
         logger.info(repairModel.toString());
 
         repairService.update(repairModel);
-        return "redirect:/";
+        return "redirect:/admin/searchRepair";
     }
 
 
