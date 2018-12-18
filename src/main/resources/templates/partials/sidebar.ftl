@@ -4,7 +4,7 @@
             <a href="/"> <img src="/images/logo1.png" width="200px" height="80px"></a>
         </li>
         <li>
-            <a href="/admin/index">Home</a>
+            <a href="/admin">Home</a>
         </li>
         <li>
             <a href="/admin/searchRepair">Repairs</a>

@@ -1,6 +1,6 @@
 <div class="table" style="padding-left: 0px;position: relative;top: -45px;">
         <#if foundPersonList??>
-        <table id="Persons" class="table table-striped">
+        <table id="PersonsByAfm" class="table table-striped">
             <thead>
             <tr>
                 <th>AFM</th>

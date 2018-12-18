@@ -34,11 +34,11 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
     public String addrepairFormGet (Model model) {
         model.addAttribute(REPAIR_FORM,
                 new RepairForm());
-        return "/admin/addRepair";
+        return "admin/addRepair";
     }
 
-    @PostMapping(value = "/addRepair")
-    public String addRerairFormPost(Model model,
+    @PostMapping(value = "/admin/addRepair")
+    public String addRepairFormPost(Model model,
                            @Valid @ModelAttribute(REPAIR_FORM)
                                    RepairForm repairForm,
                            BindingResult bindingResult) {

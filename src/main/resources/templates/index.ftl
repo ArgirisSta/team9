@@ -3,13 +3,13 @@
 
 <head>
 
-    <#include "partials/head.ftl">
+    <#include "/partials/head.ftl">
 
     <title>Car Repair Station</title>
 
     <!-- Bootstrap core CSS -->
-	
-    <#include "partials/styles.ftl">
+
+    <#include "/partials/styles.ftl">
 
 </head>
 
@@ -17,7 +17,7 @@
 
 <!-- Navigation -->
 
-<#include "partials/sitenavbar.ftl">
+<#include "/partials/sitenavbar.ftl">
 
 
 <header>
@@ -140,10 +140,10 @@
 <!-- /.container -->
 
 <!-- Footer -->
-<#include "partials/footer.ftl">
+<#include "/partials/footer.ftl">
 
 <!-- Bootstrap core JavaScript -->
-<#include "partials/scripts.ftl">
+<#include "/partials/scripts.ftl">
 
 </body>
 

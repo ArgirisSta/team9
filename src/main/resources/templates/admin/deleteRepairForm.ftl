@@ -5,7 +5,7 @@
 
     <#include "/partials/head.ftl">
 
-    <title>Up Coming Repairs</title>
+    <title>Delete Repairs</title>
 
     <!-- Bootstrap core CSS -->
     <#include "/partials/styles.ftl">

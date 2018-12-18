@@ -2,10 +2,10 @@
 * {box-sizing: border-box;}
 @font-face {
     font-family: "Poppins-Regular";
-    src: url("../resources/static/fonts/poppins/Poppins-Regular.ttf"); }
+    src: url("static/fonts/poppins/Poppins-Regular.ttf"); }
 @font-face {
     font-family: "Poppins-SemiBold";
-    src: url("../resources/static/fonts/poppins/Poppins-Regular.ttf"); }
+    src: url("static/fonts/poppins/Poppins-Regular.ttf"); }
 body {
     margin: 0;
     font-family: 'Poppins-Regular';

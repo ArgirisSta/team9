@@ -53,7 +53,12 @@
              <@spring.bind "repairForm.repairStatus"/>
                     <label class="col-sm-1 control-label"for="repairStatus">Repair Status</label>
                     <div class="col-sm-11">
-                        <input class="form-control" type="text"  name="repairStatus" id="repairStatus" placeholder="Status">
+                        <select class="form-control" id="repairStatus" name="repairStatus">
+                            <option value="WAITING" disabled selected>WAITING</option>
+                            <option value="IN PROGRESS">IN PROGRESS</option>
+                            <option value="COMPLETED">COMPLETED</option>
+
+                        </select>
                     </div>
                 </div>
 
@@ -62,7 +67,12 @@
             <@spring.bind "repairForm.repairType"/>
                     <label class="col-sm-1 control-label" for="repairType">Repair Type</label>
                     <div class="col-sm-11">
-                        <input class="form-control" type="text"  name="repairType" id="repairType" placeholder="Type">
+                        <select class="form-control" id="repairType" name="repairType">
+                            <option value="" disabled selected>Select Repair Type</option>
+                            <option value="MINOR">MINOR</option>
+                            <option value="MAJOR">MAJOR</option>
+
+                        </select>
 
                     </div>
                 </div>
@@ -90,9 +100,9 @@
                 <div class="form-group">
 
                            <@spring.bind "repairForm.comments"/>
-                    <label class="col-sm-1 control-label"="comments">Comments</label>
+                    <label class="col-sm-1 control-label"="comments">Description</label>
                     <div class="col-sm-11">
-                        <textarea id="textarea" rows="4" cols="50" name="comments" class="form-group" style="margin-left: 26px">Enter comments here... </textarea>
+                        <textarea id="textarea" rows="4" cols="50" name="comments" class="form-group" style="margin-left: 26px"></textarea>
                     </div>
                 </div>
 

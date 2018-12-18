@@ -1,6 +1,6 @@
 <div class="topnav">
-    <a href="/admin/index">Home</a>
-    <a href="/admin/searchRepair">Repairs</a>
+    <a href="/admin">Home</a>
+    <a  class="active" href="/admin/searchRepair">Repairs</a>
     <a href="/admin/Users">Owners</a>
     <a class="active" href="/admin/addRepair">Add Repair Service</a>
     <a href="/admin/addUser">Add User</a>

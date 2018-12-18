@@ -1873,6 +1873,7 @@ pre code {
 
 select.form-control:not([size]):not([multiple]) {
   height: calc(2.25rem + 24px);
+  margin-left: 25px;
 }
 
 select.form-control:focus::-ms-value {

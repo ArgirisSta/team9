@@ -25,7 +25,7 @@
     <!-- Page Content -->
 
     div class="topnav">
-    <a href="/admin/index">Home</a>
+    <a href="/admin">Home</a>
     <a href="/admin/searchRepair">Repairs</a>
     <a  class="active" href="/admin/Users">Owners</a>
     <a href="/admin/addRepair">Add Repair Service</a>
@@ -47,7 +47,7 @@
         <div class="container-fluid">
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h1 class="page-header">Users</h1>
-                <table id="Persons" class="table table-striped">
+                <table id="Users" class="table table-striped">
                     <thead>
                     <tr>
                         <th>AFM</th>
