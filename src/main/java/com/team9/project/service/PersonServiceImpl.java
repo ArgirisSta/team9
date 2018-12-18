@@ -44,7 +44,7 @@ public class PersonServiceImpl implements PersonService {
     }
     @Override
     public Person findByAfm(String afm){
-        return personRepository.findByAfm(afm)
+        return personRepository.findByAfmLike(afm)
                 .orElseThrow(PersonNotFoundException::new);
 
     }

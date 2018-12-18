@@ -49,17 +49,17 @@ public class  AdminController {
         String digitRegex = "\\d+";
         List<PersonModel> personList;
 
-        if(criteria.matches(digitRegex)) {
+        if(criteria.isEmpty()) {
+            personList = adminService.findAllPersons();
+        }
+
+        else if(criteria.matches(digitRegex)) {
             personList = adminService.findPersonsByAfm(criteria);
         }
         else {
             personList = adminService.findPersonsByEmail(criteria);
         }
 
-        if(personList.isEmpty()) {
-            model.addAttribute("searchError", "Person could not be found");
-            return "index";
-        }
         model.addAttribute("foundPersonList", personList);
 
         return "index";

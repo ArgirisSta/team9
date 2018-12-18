@@ -19,11 +19,11 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     List<Person> findByemailAndPassword(String email, String password);
 
-    Optional<Person> findByAfm(String afm);
+    Optional<Person> findByAfmLike(String afm);
 
-    List<Person> findPersonsByAfm(String afm);
+    List<Person> findPersonsByAfmContaining(String afm);
 
-    List<Person> findPersonsByEmail(String email);
+    List<Person> findPersonsByEmailContainingIgnoreCase(String email);
 
     Person findByplateNumber(String Plate);
 

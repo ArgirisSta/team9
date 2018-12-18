@@ -14,6 +14,8 @@ public interface AdminService {
 
      List<PersonModel> findPersonsByEmail(String email);
 
+     List<PersonModel> findAllPersons();
+
      PersonModel findPersonById(long id);
 
      void updatePerson(PersonModel personModel);

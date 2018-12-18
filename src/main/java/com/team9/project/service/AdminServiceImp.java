@@ -38,7 +38,7 @@ public class AdminServiceImp implements AdminService {
     @Override
     public List<PersonModel> findPersonsByAfm(String afm) {
         return
-                personRepository.findPersonsByAfm(afm)
+                personRepository.findPersonsByAfmContaining(afm)
                         .stream()
                         .map(person -> converter.mapToModel(person))
                         .collect(Collectors.toList());
@@ -48,10 +48,18 @@ public class AdminServiceImp implements AdminService {
     public List<PersonModel> findPersonsByEmail(String email) {
         return
 
-                personRepository.findPersonsByEmail(email)
+                personRepository.findPersonsByEmailContainingIgnoreCase(email)
                         .stream()
                         .map(person -> converter.mapToModel(person))
                         .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<PersonModel> findAllPersons() {
+        return personRepository.findAll()
+                .stream()
+                .map(person -> converter.mapToModel(person))
+                .collect(Collectors.toList());
     }
 
     @Override
