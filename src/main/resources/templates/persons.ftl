@@ -44,8 +44,15 @@
 
 
         <td class="text-right">
-            <a class="btn" href="/admin/updatePerson/${person.getId()}">Edit</a>
+            <form action="/admin/updatePerson/${person.getId()}">
+                <input type="submit" value="Edit"/>
+            </form>
+        </td>
 
+        <td class="text-right">
+            <form action="/admin/deletePerson/${person.getId()}" name="personToBeDeletedFormId" method="post">
+                <input type="submit" value="Delete"/>
+            </form>
         </td>
     </tr>
     </#list>

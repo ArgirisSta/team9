@@ -18,4 +18,6 @@ public interface AdminService {
 
      void updatePerson(PersonModel personModel);
 
+     void deletePersonById(long id);
+
 }

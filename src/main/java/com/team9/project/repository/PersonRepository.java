@@ -27,4 +27,5 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     Person findByplateNumber(String Plate);
 
+
 }

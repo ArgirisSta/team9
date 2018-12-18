@@ -53,9 +53,9 @@
                       <label for="userType">User Type</label>
                       <@spring.bind "personForm.userType"/>
                       <select class="form-control" id="userType" name="userType">
-                      <option value="" disabled selected>${personForm.userType}</option>
+                      <option value="" disabled selected> Current user type: ${personForm.userType}. Select the desired type</option>
                       <option value="ADMIN">Administrator</option>
-                      <option value="USER">USER</option>
+                      <option value="USER">User</option>
                       </select>
                      </div>
 
@@ -69,7 +69,7 @@
                       <label for="carBrand">Car Brand</label>
                       <@spring.bind "personForm.carBrand"/>
                       <select class="form-control" id="carBrand" name="carBrand">
-                      <option selected value="">Select the brand of the car</option>
+                      <option value="" disabled selected>Current Brand ${personForm.carBrand}. Select the brand of your choice</option>
                       <option value="ALFA_ROMEO">Alfa Romeo</option>
                       <option value="ASTON_MARTIN">Aston Martin</option>
                       <option value="AUDI">Audi</option>

@@ -64,6 +64,11 @@ public class AdminServiceImp implements AdminService {
         Person personToUpdate = personRepository.findById(personModel.getId());
         personRepository.save(personModelToPersonConverter.convertModelToPerson(personModel, personToUpdate));
     }
+
+    @Override
+    public void deletePersonById(long id) {
+        personRepository.deleteById(id);
+    }
 }
 
 

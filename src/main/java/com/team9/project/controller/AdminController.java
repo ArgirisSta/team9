@@ -75,20 +75,30 @@ public class  AdminController {
     public String updatePerson(Model model, @ModelAttribute("personForm") PersonModel personModel,
                                   BindingResult bindingResult) {
 
-        System.out.println("-----------------------------------------------------------FDFDFDFFDDDF");
 
          if (bindingResult.hasErrors()) {
 
-        //     return "addRepair";
+             //model.addAttribute("personUpdateError", "Modifications could not be applied. Please try again");
          }
          else {
-             System.out.println(personModel.getName());
              adminService.updatePerson(personModel);
+             model.addAttribute("personUpdateSuccess", "Modified information for person with ID : " + personModel.getId());
          }
 
-        System.out.println("---------------------------" +personModel.getName());
-        adminService.updatePerson(personModel);
-
         return "redirect:/";
+    }
+
+    @GetMapping(value = "/admin/deletePerson/{id}")
+    public String deletePersonGet() {
+
+        return "index";
+    }
+
+    @PostMapping(value = "/admin/deletePerson/{id}")
+    public String deletePerson(@PathVariable(name = "id") String id) {
+
+        adminService.deletePersonById(Long.parseLong(id));
+
+        return "index";
     }
 }
