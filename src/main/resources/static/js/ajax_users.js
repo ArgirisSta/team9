@@ -1,7 +1,7 @@
 (function ($) {
     var API_URL = 'admin/index';
     var error_message = 'No Owners available right now.';
-    var $tableSelector = $('table#PersonsbyAfm');
+    var $tableSelector = $('table#Persons');
 
     var $tableBody = $tableSelector.find('tbody');
 

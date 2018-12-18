@@ -62,7 +62,7 @@ public class  AdminController {
         }
         model.addAttribute("foundPersonList", personList);
 
-        return "persons";
+        return "index";
     }
 
     @GetMapping("/admin/updatePerson/{id}")

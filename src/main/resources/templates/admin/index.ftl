@@ -40,15 +40,12 @@
         <a href="logout.ftl">Log out</a>
     </div>
 
-    <#include "/partials/searchByAfm.ftl">
+
 
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>Welcome Admin</h1>
-            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-            <h3>Please press the Toggle Menu button to navigate to available actions to perform!</h3>
-            <br>
-            <br>
+
+            <#include "persons.ftl">
 
             <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
         </div>

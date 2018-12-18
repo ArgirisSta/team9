@@ -9,10 +9,11 @@
 </head>
 <body>
 
+
 <#if foundPersonList??>
 <h1 class="page-header">Owners</h1>
 
-<table class="table table-striped">
+<table id="Persons" class="table table-striped">
     <thead>
     <tr>
         <th>Id</th>
