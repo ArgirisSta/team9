@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -40,9 +37,7 @@ public class  AdminController {
         if(bindingResult.hasErrors()) {
             return "register";
         }
-
         adminService.registerPerson(registerForm);
-
         return "success";
     }
 
@@ -56,16 +51,44 @@ public class  AdminController {
             personList = adminService.findPersonsByAfm(criteria);
         }
         else {
-            personList = adminService.findPersonsBySurname(criteria);
+            personList = adminService.findPersonsByEmail(criteria);
         }
 
-        System.out.println(personList);
         if(personList.isEmpty()) {
             model.addAttribute("searchError", "Person could not be found");
             return "index";
         }
         model.addAttribute("foundPersonList", personList);
 
-        return "index";
+        return "persons";
+    }
+
+    @GetMapping("/admin/updatePerson/{id}")
+    public String updateRepairGet (Model model, @PathVariable(name = "id") String id ) {
+
+        PersonModel personModel = adminService.findPersonById(Long.parseLong(id));
+        model.addAttribute("personForm", personModel);
+        return "updatePersonForm";
+    }
+
+    @PostMapping(value = "/admin/updatePerson")
+    public String updatePerson(Model model, @ModelAttribute("personForm") PersonModel personModel,
+                                  BindingResult bindingResult) {
+
+        System.out.println("-----------------------------------------------------------FDFDFDFFDDDF");
+
+         if (bindingResult.hasErrors()) {
+
+        //     return "addRepair";
+         }
+         else {
+             System.out.println(personModel.getName());
+             adminService.updatePerson(personModel);
+         }
+
+        System.out.println("---------------------------" +personModel.getName());
+        adminService.updatePerson(personModel);
+
+        return "redirect:/";
     }
 }

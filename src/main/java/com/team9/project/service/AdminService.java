@@ -12,6 +12,10 @@ public interface AdminService {
 
      List<PersonModel> findPersonsByAfm(String afm);
 
-     List<PersonModel> findPersonsBySurname(String surname);
+     List<PersonModel> findPersonsByEmail(String email);
+
+     PersonModel findPersonById(long id);
+
+     void updatePerson(PersonModel personModel);
 
 }

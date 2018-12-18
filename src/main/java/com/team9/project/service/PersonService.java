@@ -8,13 +8,14 @@ import org.springframework.ui.Model;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PersonService {
 
 
     List<Person> findAll();
 
-    Person findById(Long Id);
+    Optional <Person> findById(Long Id);
 
     Person findByAfm(String afm);
 

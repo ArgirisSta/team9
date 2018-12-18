@@ -11,7 +11,7 @@
 <#import "/spring.ftl" as spring />
 
 <form class="example" action="/admin/search" name="searchForm" method="GET">
-    <input type="text" placeholder="Search by AFM or Surname" name="criteria">
+    <input type="text" placeholder="Search by AFM or email" name="criteria">
     <button type="submit"> Search Person</button>
 </form>
 

@@ -10,26 +10,36 @@ public class Person {
     @Column(name = "person_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long personId;
+
     @Column(name = "afm", length = 20, unique = true)
     private String afm;
+
     @Column(name = "name", length = 15)
     private String name;
+
     @Column(name = "surname", length = 25)
     private String surname;
+
     @Column(name = "address", length = 30)
     private String address;
+
     @Column(name = "email", length = 20)
     private String email;
+
     @Column(name = "password", length = 40, nullable = false)
     private String password;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "car_brand", length = 10)
     private CarBrand carBrand;
+
     @Column(name = "plate_number", length = 8)
     private String plateNumber;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", length = 15, nullable = false)
     private UserType userType;
+
     @OneToMany(mappedBy="repairId",
             targetEntity=Repair.class)
     private Collection repairs;

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PersonServiceImpl implements PersonService {
@@ -23,9 +24,9 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person findById(Long id) {
-       return personRepository.findById(id)
-               .orElseThrow(PersonNotFoundException::new);
+    public Optional <Person> findById(Long id) {
+       return personRepository.findById(id);
+               //.orElseThrow(PersonNotFoundException::new);
     }
 
     @Override

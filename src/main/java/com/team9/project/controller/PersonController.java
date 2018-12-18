@@ -29,9 +29,9 @@ public class PersonController {
         logger.info("=============================");
         logger.info("====Getting all authors====");
          personService.findAll().forEach(personl -> logger.info(personl.toString()));
-            person = personService.findById(id);
-            model.addAttribute("name", person.getName());
-            model.addAttribute("surname", person.getSurname());
+//            //person = personService.findById(id);
+//            model.addAttribute("name", person.getName());
+//            model.addAttribute("surname", person.getSurname());
 
             return "hello";
 
