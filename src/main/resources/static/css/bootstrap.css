@@ -579,7 +579,9 @@ pre code {
 }
 
 .container-fluid {
-  width: 100%;
+  border: 2px solid #2196F3;
+  border-radius: 4px;
+  width: 60%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -1873,6 +1875,7 @@ pre code {
 
 select.form-control:not([size]):not([multiple]) {
   height: calc(2.25rem + 24px);
+  margin-left: 25px;
 }
 
 select.form-control:focus::-ms-value {

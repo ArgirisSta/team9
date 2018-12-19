@@ -10,6 +10,7 @@ import com.team9.project.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,7 +43,7 @@ public class RepairServiceImpl implements RepairService {
 
     public List<Repair> findRepairByPersonId(Person person){
         return
-                repairRepository.findByowner(person);
+                repairRepository.findByOwner(person);
     }
 
 
@@ -51,7 +52,7 @@ public class RepairServiceImpl implements RepairService {
         Person person = personService.findByAfm(repairModel.getAfm());
         Repair repair = new Repair(repairModel.getDate(),repairModel.getRepairStatus(),
                 repairModel.getRepairType(),(Double) repairModel.getPrice(),person,repairModel.getComments());
-         return       repairRepository.save(repair);
+        return       repairRepository.save(repair);
 
     }
 
@@ -80,4 +81,35 @@ public class RepairServiceImpl implements RepairService {
         return       repairRepository.save(repair);
 
     }
+
+    public List<RepairModel> findByrepairDateBetween(LocalDateTime fromDate,LocalDateTime toDate){
+        return repairRepository.findByrepairDateBetween(fromDate,toDate)
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+
+    }
+    public List<RepairModel> findByOwnerAfm(String Afm){
+        Person person = personService.findByAfm(Afm);
+        List<Repair> repairs = this.repairRepository.findByOwner(person);
+        return repairs
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
+
+    public List<RepairModel> findByPlate(String plate){
+        Person person = personService.findByplateNumer(plate);
+        List<Repair> repairs = this.repairRepository.findByOwner(person);
+        return repairs
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void delete(Long id){
+        repairRepository.deleteById(id);
+    }
+
 }

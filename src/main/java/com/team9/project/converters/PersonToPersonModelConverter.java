@@ -14,7 +14,7 @@ public class PersonToPersonModelConverter {
             return null;
         }
 
-        PersonModel personModel = new PersonModel(person.getName(), person.getSurname(), person.getAfm(),
+        PersonModel personModel = new PersonModel(person.getPersonId(), person.getName(), person.getSurname(), person.getAfm(),
                 person.getAddress(), person.getEmail(), person.getUserType(),
                 person.getPlateNumber(), person.getCarBrand());///
 

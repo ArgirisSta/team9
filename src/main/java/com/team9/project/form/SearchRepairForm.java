@@ -2,31 +2,34 @@ package com.team9.project.form;
 
 import com.team9.project.domain.RepairStatus;
 import com.team9.project.domain.RepairType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
 public class SearchRepairForm {
 
-    private LocalDateTime Fromdate;
-    private LocalDateTime Todate;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime fromDate;
+    @DateTimeFormat (iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime toDate;
     private String Afm;
     private String Plate;
 
 
-    public LocalDateTime getFromdate() {
-        return Fromdate;
+    public LocalDateTime getFromDate() {
+        return fromDate;
     }
 
-    public void setFromdate(LocalDateTime fromdate) {
-        Fromdate = fromdate;
+    public void setFromDate(LocalDateTime fromDate) {
+        this.fromDate = fromDate;
     }
 
-    public LocalDateTime getTodate() {
-        return Todate;
+    public LocalDateTime getToDate() {
+        return toDate;
     }
 
-    public void setTodate(LocalDateTime todate) {
-        Todate = todate;
+    public void setToDate(LocalDateTime toDate) {
+        this.toDate = toDate;
     }
 
     public String getAfm() {
@@ -44,6 +47,4 @@ public class SearchRepairForm {
     public void setPlate(String plate) {
         Plate = plate;
     }
-
-
 }

@@ -5,6 +5,7 @@ import com.team9.project.domain.UserType;
 
 public class PersonModel {
 
+    private long id;
     private String name;
     private String surname;
     private String afm;
@@ -14,9 +15,10 @@ public class PersonModel {
     private String plateNumber;
     private CarBrand carBrand;
 
-    public PersonModel(String name, String surname, String afm, String address,
+    public PersonModel(long id, String name, String surname, String afm, String address,
                        String email, UserType userType, String plateNumber,
                        CarBrand carBrand) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.afm = afm;
@@ -27,6 +29,13 @@ public class PersonModel {
         this.carBrand = carBrand;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

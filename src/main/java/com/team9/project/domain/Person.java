@@ -1,47 +1,72 @@
- package com.team9.project.domain;
+package com.team9.project.domain;
 
 import javax.persistence.*;
 import java.util.Collection;
 
- @Entity
+@Entity
 @Table(name = "Persons")
 public class Person {
+
     @Id
     @Column(name = "person_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long personId;
-    @Column(name = "afm", length = 20, unique = true)
+
+    @Column(name = "afm", length = 9, unique = true)
     private String afm;
+
     @Column(name = "name", length = 15)
     private String name;
+
     @Column(name = "surname", length = 25)
     private String surname;
+
     @Column(name = "address", length = 30)
     private String address;
+
     @Column(name = "email", length = 20)
     private String email;
+
     @Column(name = "password", length = 40, nullable = false)
     private String password;
+
     @Enumerated(EnumType.STRING)
-    @Column(name = "car_brand", length = 10)
+    @Column(name = "car_brand", length = 30)
     private CarBrand carBrand;
+
     @Column(name = "plate_number", length = 8)
     private String plateNumber;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", length = 15, nullable = false)
     private UserType userType;
+
     @OneToMany(mappedBy="repairId",
-            targetEntity=Repair.class)
+            targetEntity=Repair.class ,cascade = {CascadeType.REMOVE})
     private Collection repairs;
 
-     public Person(long personId) {
-         this.personId = personId;
+    public Person(long personId) {
+        this.personId = personId;
+    }
 
-     }
-    public  Person(){
+    public Person() {
 
     }
-     public long getPersonId() {
+
+    public Person(String afm, String name, String surname, String address, String email, String password,
+                  CarBrand carBrand, String plateNumber, UserType userType) {
+        this.afm = afm;
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.carBrand = carBrand;
+        this.plateNumber = plateNumber;
+        this.userType = userType;
+    }
+
+    public long getPersonId() {
         return personId;
     }
 
@@ -127,6 +152,7 @@ public class Person {
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
+                ", AFM='" + afm + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

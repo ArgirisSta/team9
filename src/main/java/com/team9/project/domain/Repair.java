@@ -23,9 +23,11 @@ public class Repair {
     private RepairType repairType;
     @Column(name = "price")
     private double price;
+
     @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "person_id")
     Person owner;
+
     @Column(name = "comment", length = 30)
     private String comment;
 
