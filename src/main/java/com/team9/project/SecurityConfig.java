@@ -1,6 +1,8 @@
 package com.team9.project;
 
+import com.team9.project.security.LoginSucessHandler;
 import com.team9.project.service.UserDetailsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,8 +13,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
-public class Security extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private LoginSucessHandler loginSucessHandler;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -22,7 +26,6 @@ public class Security extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-
     }
 
     @Override
@@ -34,19 +37,26 @@ public class Security extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http
-                .csrf()
-                .disable()
-                .authorizeRequests()
-                .anyRequest().permitAll()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/", true)
+                .csrf().disable()
+                .formLogin().loginPage("/login")
+                .successHandler(loginSucessHandler)
                 .failureUrl("/login?error=true")
                 .and()
                 .logout()
                 .logoutUrl("/logout")
-                .deleteCookies("JSESSIONID");
+                .logoutSuccessUrl("/login")
+                .deleteCookies("JSESSIONID")
+                .permitAll()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/login").anonymous()
+                .antMatchers("/").hasAuthority("ADMIN")
+                .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .and()
+                .headers()
+                .frameOptions()
+                .sameOrigin()
+        ;
     }
 
 }
