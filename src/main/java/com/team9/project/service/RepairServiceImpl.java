@@ -7,8 +7,6 @@ import com.team9.project.exception.PersonNotFoundException;
 import com.team9.project.form.RepairForm;
 import com.team9.project.model.RepairModel;
 import com.team9.project.repository.RepairRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +16,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class RepairServiceImpl implements RepairService {
-
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     RepairRepository repairRepository;
@@ -56,7 +52,7 @@ public class RepairServiceImpl implements RepairService {
         Person person = personService.findByAfm(repairModel.getAfm());
         Repair repair = new Repair(repairModel.getDate(),repairModel.getRepairStatus(),
                 repairModel.getRepairType(),(Double) repairModel.getPrice(),person,repairModel.getComments());
-         return       repairRepository.save(repair);
+        return       repairRepository.save(repair);
 
     }
 
@@ -95,9 +91,8 @@ public class RepairServiceImpl implements RepairService {
     }
     public List<RepairModel> findByOwnerAfm(String Afm){
         Person person = personService.findByAfm(Afm);
-
-        List<Repair> repairs = (List<Repair>) person.getRepairs();
-        return  repairs
+        List<Repair> repairs = this.repairRepository.findByOwner(person);
+        return repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
@@ -105,8 +100,7 @@ public class RepairServiceImpl implements RepairService {
 
     public List<RepairModel> findByPlate(String plate){
         Person person = personService.findByplateNumer(plate);
-
-        List<Repair> repairs = (List<Repair>) person.getRepairs(); //change CollectionsToList
+        List<Repair> repairs = this.repairRepository.findByOwner(person);
         return repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
@@ -115,7 +109,7 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public void delete(Long id){
-
         repairRepository.deleteById(id);
     }
+
 }

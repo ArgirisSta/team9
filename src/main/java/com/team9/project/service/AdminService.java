@@ -7,11 +7,16 @@ import java.util.List;
 
 public interface AdminService {
 
-     void registerPerson(RegisterForm registerForm);
+    void registerPerson(RegisterForm registerForm);
 
-     List<PersonModel> findPersonsByAfm(String ctiteria);
+    List<PersonModel> findPersonsByAfm(String afm);
 
-     List<PersonModel> findPersonsBySurname(String criteria);
+    List<PersonModel> findPersonsByEmail(String email);
 
+    PersonModel findPersonById(long id);
+
+    void updatePerson(PersonModel personModel);
+
+    void deletePersonById(long id);
 
 }

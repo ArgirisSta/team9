@@ -1,5 +1,6 @@
 package com.team9.project.service;
 
+import com.team9.project.converters.PersonModelToPersonConverter;
 import com.team9.project.converters.PersonToPersonModelConverter;
 import com.team9.project.domain.Person;
 import com.team9.project.form.RegisterForm;
@@ -18,6 +19,9 @@ public class AdminServiceImp implements AdminService {
 
     @Autowired
     private PersonToPersonModelConverter converter;
+
+    @Autowired
+    private PersonModelToPersonConverter personModelToPersonConverter;
 
     public Person convertRegisterFormToPerson(RegisterForm registerForm) {
         Person person = new Person(registerForm.getAfm(), registerForm.getName(), registerForm.getSurname(),
@@ -41,14 +45,28 @@ public class AdminServiceImp implements AdminService {
     }
 
     @Override
-    public List<PersonModel> findPersonsBySurname(String surname) {
+    public List<PersonModel> findPersonsByEmail(String email) {
         return
 
-                personRepository.findPersonsBySurname(surname)
+                personRepository.findPersonsByEmail(email)
                         .stream()
                         .map(person -> converter.mapToModel(person))
                         .collect(Collectors.toList());
     }
+
+    @Override
+    public PersonModel findPersonById(long id) {
+        return  converter.mapToModel(personRepository.findById(id));
+    }
+
+    @Override
+    public void updatePerson(PersonModel personModel) {
+        Person personToUpdate = personRepository.findById(personModel.getId());
+        personRepository.save(personModelToPersonConverter.convertModelToPerson(personModel, personToUpdate));
+    }
+
+    @Override
+    public void deletePersonById(long id) {
+        personRepository.deleteById(id);
+    }
 }
-
-

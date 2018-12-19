@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -42,7 +39,7 @@ public class  AdminController {
 
         adminService.registerPerson(registerForm);
 
-        return "/admin/Users";
+        return "/admin";
     }
 
     @GetMapping(value = "/admin/index")
@@ -55,7 +52,7 @@ public class  AdminController {
             personList = adminService.findPersonsByAfm(criteria);
         }
         else {
-            personList = adminService.findPersonsBySurname(criteria);
+            personList = adminService.findPersonsByEmail(criteria);
         }
 
         System.out.println(personList);
@@ -68,5 +65,46 @@ public class  AdminController {
         redirectAttributes.addFlashAttribute("foundPersonList", personList);
         return String.format("redirect:%s", "/admin");
         //return "index";
+    }
+
+
+
+    @GetMapping("/admin/updatePerson/{id}")
+    public String updateRepairGet (Model model, @PathVariable(name = "id") String id ) {
+
+        PersonModel personModel = adminService.findPersonById(Long.parseLong(id));
+        model.addAttribute("personForm", personModel);
+        return "admin/updatePersonForm";
+    }
+
+    @PostMapping(value = "/admin/updatePerson")
+    public String updatePerson(Model model, @ModelAttribute("personForm") PersonModel personModel,
+                               BindingResult bindingResult) {
+
+
+        if (bindingResult.hasErrors()) {
+
+            //model.addAttribute("personUpdateError", "Modifications could not be applied. Please try again");
+        }
+        else {
+            adminService.updatePerson(personModel);
+            model.addAttribute("personUpdateSuccess", "Modified information for person with ID : " + personModel.getId());
+        }
+
+        return "redirect:/admin";
+    }
+
+    @GetMapping(value = "/admin/deletePerson/{id}")
+    public String deletePersonGet() {
+
+        return "redirect:/admin";
+    }
+
+    @PostMapping(value = "/admin/deletePerson/{id}")
+    public String deletePerson(@PathVariable(name = "id") String id) {
+
+        adminService.deletePersonById(Long.parseLong(id));
+
+        return "redirect:/admin";
     }
 }
