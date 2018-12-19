@@ -29,20 +29,20 @@ public class  AdminController {
         return "/admin/index";
     }
 
-    @GetMapping(value = "/admin/register")
+    @GetMapping(value = "/admin/addUser")
     public String showRegistrationPage(Model model) {
         model.addAttribute("registerForm", new RegisterForm());
-        return "register";
+        return "/admin/addUser";
     }
 
-    @PostMapping(value = "/admin/register")
+    @PostMapping(value = "/admin/addUser")
     public String handleRegistrationForm(Model model, @Valid @ModelAttribute("registerForm") RegisterForm registerForm,
                                          BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
-            return "register";
+            return "/admin/addUser";
         }
         adminService.registerPerson(registerForm);
-        return "success";
+        return "/admin/addUser";
     }
 
     @GetMapping(value = "/admin/search")

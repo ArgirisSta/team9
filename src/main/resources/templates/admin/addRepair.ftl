@@ -56,7 +56,7 @@
                         <select class="form-control" id="repairStatus" name="repairStatus">
                             <option value="" disabled selected>Select Repair Status</option>
                             <option value="WAITING">WAITING</option>
-                            <option value="IN PROGRESS">IN PROGRESS</option>
+                            <option value="IN_PROGRESS">IN_PROGRESS</option>
                             <option value="COMPLETED">COMPLETED</option>
 
                         </select>

@@ -3,13 +3,13 @@
 
 <head>
 
- <#include "partials/head.ftl">
+
 
     <title>Car Repair Station</title>
 
     <!-- Bootstrap core CSS -->
 
-    <#include "partials/styles.ftl">
+
 
 </head>
 
@@ -17,7 +17,7 @@
 
 <!-- Navigation -->
 
-<#include "partials/sitenavbar.ftl">
+
 <!-- Page Content -->
 <div class="container">
 
@@ -37,7 +37,7 @@
         <div class="col-lg-8 mb-4">
             <!-- Embedded Google Map -->
             <h3>Repair Service Status</h3>
-
+            <#include "/partials/userrepairs.ftl">
 
         </div>
         <!-- Contact Details Column -->
@@ -53,10 +53,10 @@
   <!-- /.container -->
 </div>
 <!-- Footer -->
-<#include "partials/footer.ftl">
+
 
 <!-- Bootstrap core JavaScript -->
-<#include "partials/scripts.ftl">
+
 
 
 </body>

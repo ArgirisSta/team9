@@ -18,7 +18,7 @@ import java.util.Collection;
 public class LoginSucessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
     private static final String TIMESTAMP_COOKIE_NAME = "TIMESTAMP";
-    private static final String USER_HOME_PAGE_URL = "/user/homepage";
+    private static final String USER_HOME_PAGE_URL = "/user/main";
     private static final String ADMIN_HOME_PAGE_URL = "/admin";
 
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
@@ -30,10 +30,12 @@ public class LoginSucessHandler extends SavedRequestAwareAuthenticationSuccessHa
         response.addCookie(generateTimestampCookie());
 
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-        String redirectUrl = USER_HOME_PAGE_URL;
+        String redirectUrl = "/";
         for (GrantedAuthority grantedAuthority : authorities) {
             if (grantedAuthority.getAuthority().equals("ADMIN")) {
                 redirectUrl = ADMIN_HOME_PAGE_URL;
+            }else if (grantedAuthority.getAuthority().equals("USER")) {
+                redirectUrl = USER_HOME_PAGE_URL;
             }
         }
         redirectStrategy.sendRedirect(request, response, redirectUrl);

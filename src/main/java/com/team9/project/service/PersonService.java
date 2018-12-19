@@ -28,6 +28,7 @@ public interface PersonService {
                         String carBrand, String plateNumber, String userType);
 
     Person findByplateNumer(String plate);
+    Person findByEmail(String email);
 
 
 }
