@@ -37,7 +37,7 @@
 
         </td>
         <td class="text-right">
-            <a class="btn btn-danger" href="/admin/deletePerson/${person.getId()}">Delete</a>
+            <a class="btn btn-danger" href="/admin/deletePerson/${person.getId()}" name="personToBeDeletedFormId">Delete</a>
 
         </td>
     </tr>

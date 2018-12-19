@@ -20,16 +20,12 @@
         </div>
     </div>
     <form class="navbar-form navbar-right">
-        <@spring.bind "registerForm.email"/>
+
         <input class="form-control" type="text" name="email" id="email" placeholder="Email" formmethod="post">
-            <#list spring.status.errorMessages as error>
-                <span>${error}</span>
-            </#list>
-        <@spring.bind "registerForm.password"/>
+
+
         <input class="form-control" type="password" name="password" id="password" placeholder="password" formmethod="post">
-            <#list spring.status.errorMessages as error>
-                <span>${error}</span>
-            </#list>
+
         <button type="submit" class="btn btn-success">Sign in</button>
     </form>
 </nav>
