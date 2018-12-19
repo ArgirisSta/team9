@@ -29,5 +29,11 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     Person findByEmail(String email);
 
+    List<Person> findPersonsByAfm(String afm);
+
+    List<Person> findPersonsByEmail(String email);
+
+    Person findByplateNumber(String Plate);
+
 
 }

@@ -18,4 +18,6 @@ public interface RepairService {
     List<RepairModel> findByOwnerAfm(String Afm);
     void delete(Long id);
 
+
+
 }

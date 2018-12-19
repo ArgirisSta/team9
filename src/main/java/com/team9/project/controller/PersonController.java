@@ -19,17 +19,14 @@ public class PersonController {
     @Autowired
     PersonServiceImpl personService;
 
-    @GetMapping("/admin/Users")
+    @GetMapping("/admin/")
     public String person (Model model, @RequestParam(value = "id") Long id) {
         Person person;
         logger.info("=============================");
         logger.info("====Getting all authors====");
-         personService.findAll().forEach(personl -> logger.info(personl.toString()));
-//            //person = personService.findById(id);
-//            model.addAttribute("name", person.getName());
-//            model.addAttribute("surname", person.getSurname());
+        personService.findAll().forEach(personl -> logger.info(personl.toString()));
 
-            return "/admin/Users";
+            return "admin/index";
 
 
     }

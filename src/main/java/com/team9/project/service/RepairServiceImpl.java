@@ -52,7 +52,7 @@ public class RepairServiceImpl implements RepairService {
         Person person = personService.findByAfm(repairModel.getAfm());
         Repair repair = new Repair(repairModel.getDate(),repairModel.getRepairStatus(),
                 repairModel.getRepairType(),(Double) repairModel.getPrice(),person,repairModel.getComments());
-         return       repairRepository.save(repair);
+        return       repairRepository.save(repair);
 
     }
 

@@ -54,13 +54,15 @@ html {
 }
 
 .container-fluid {
+    border: 2px solid #2196F3;
+    border-radius: 4px;
   width: 60%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
     position: relative;
-    top: -75px;
+    top: -60px;
 
 }
 

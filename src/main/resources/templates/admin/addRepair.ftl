@@ -54,7 +54,8 @@
                     <label class="col-sm-1 control-label"for="repairStatus">Repair Status</label>
                     <div class="col-sm-11">
                         <select class="form-control" id="repairStatus" name="repairStatus">
-                            <option value="WAITING" disabled selected>WAITING</option>
+                            <option value="" disabled selected>Select Repair Status</option>
+                            <option value="WAITING">WAITING</option>
                             <option value="IN PROGRESS">IN PROGRESS</option>
                             <option value="COMPLETED">COMPLETED</option>
 

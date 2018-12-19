@@ -29,9 +29,9 @@
 
 
                 <td class="text-right">
-                    <button class="btn btn-danger" type="submit" value="Delete" href="/admin/deleteUser">Delete
+                    <button class="btn btn-danger" type="submit" value="Delete" href="/admin/deletePersonForm">Delete
                     </button>
-                    <button class="btn btn-success" type="submit" value="Edit" href="/admin/updateUser">Edit</button>
+                    <button class="btn btn-success" type="submit" value="Edit" href="/admin/updatePerson/${person.getId()}">Edit</button>
                 </td>
             </tr>
             </#list>
