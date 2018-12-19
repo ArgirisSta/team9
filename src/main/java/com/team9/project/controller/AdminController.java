@@ -25,7 +25,8 @@ public class  AdminController {
 
     @GetMapping(value = "/admin")
     public String showAdminPage() {
-        return "index";
+
+        return "/admin/index";
     }
 
     @GetMapping(value = "/admin/register")
@@ -63,7 +64,7 @@ public class  AdminController {
 
         model.addAttribute("foundPersonList", personList);
 
-        return "index";
+        return "/admin";
     }
 
     @GetMapping("/admin/updatePerson/{id}")
@@ -88,13 +89,13 @@ public class  AdminController {
              model.addAttribute("personUpdateSuccess", "Modified information for person with ID : " + personModel.getId());
          }
 
-        return "redirect:/";
+        return "redirect:/admin";
     }
 
     @GetMapping(value = "/admin/deletePerson/{id}")
-    public String deletePersonGet() {
-
-        return "index";
+    public String deletePersonGet(@PathVariable(name = "id") String id) {
+        adminService.deletePersonById(Long.parseLong(id));
+        return "redirect:/admin";
     }
 
     @PostMapping(value = "/admin/deletePerson/{id}")

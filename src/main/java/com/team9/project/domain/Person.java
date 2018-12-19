@@ -42,7 +42,7 @@ public class Person {
     private UserType userType;
 
     @OneToMany(mappedBy="repairId",
-            targetEntity=Repair.class)
+            targetEntity=Repair.class,cascade = {CascadeType.REMOVE})
     private Collection repairs;
 
 

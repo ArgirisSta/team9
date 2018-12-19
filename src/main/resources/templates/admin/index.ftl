@@ -43,7 +43,7 @@
 
             <#import "/spring.ftl" as spring />
 
-            <form class="form-horizontal" action="/admin/index" name="searchForm" method="GET" style="
+            <form class="form-horizontal" action="/admin/search" name="searchForm" method="GET" style="
     position: relative;
     top: 40px;
 ">

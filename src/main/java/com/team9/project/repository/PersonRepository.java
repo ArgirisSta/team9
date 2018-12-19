@@ -33,7 +33,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     List<Person> findPersonsByEmail(String email);
 
-    Person findByplateNumber(String Plate);
+
 
 
 }
