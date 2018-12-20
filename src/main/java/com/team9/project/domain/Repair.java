@@ -25,7 +25,7 @@ public class Repair {
     private double price;
 
     @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "person_id",referencedColumnName = "person_id") //person_id
     Person owner;
 
     @Column(name = "comment", length = 30)

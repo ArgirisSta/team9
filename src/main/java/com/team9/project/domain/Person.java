@@ -1,5 +1,8 @@
  package com.team9.project.domain;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -41,8 +44,8 @@ public class Person {
     @Column(name = "user_type", length = 15, nullable = false)
     private UserType userType;
 
-    @OneToMany(mappedBy="repairId",
-            targetEntity=Repair.class,cascade = {CascadeType.REMOVE})
+    @OneToMany(mappedBy="owner", //repairId
+            targetEntity=Repair.class, cascade = CascadeType.REMOVE )
     private Collection repairs;
 
 

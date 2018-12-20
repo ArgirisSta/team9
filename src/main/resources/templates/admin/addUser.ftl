@@ -24,12 +24,12 @@
 
     <!-- Page Content -->
     <div class="topnav">
-        <a href="/admin/index">Home</a>
+        <a href="/admin">Home</a>
         <a href="/admin/searchRepair">Repairs</a>
         <a href="/admin/addRepair">Add Repair Service</a>
         <a class="active" href="/admin/addUser">Add User</a>
 
-        <a style="float: right" href="logout.ftl">Log out</a>
+        <a style="float: right" href="/logout">Log out</a>
     </div>
 
     <#include "/partials/searchByAfm.ftl">

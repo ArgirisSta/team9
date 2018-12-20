@@ -78,7 +78,7 @@ public class  AdminController {
 
         PersonModel personModel = adminService.findPersonById(Long.parseLong(id));
         model.addAttribute("personForm", personModel);
-        return "updatePersonForm";
+        return "/admin/updatePersonForm";
     }
 
     @PostMapping(value = "/admin/updatePerson")
@@ -109,6 +109,6 @@ public class  AdminController {
 
         adminService.deletePersonById(Long.parseLong(id));
 
-        return "index";
+        return "redirect:/admin";
     }
 }
