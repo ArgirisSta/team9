@@ -11,6 +11,7 @@ import com.team9.project.model.RepairModel;
 import com.team9.project.repository.PersonRepository;
 import com.team9.project.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -43,6 +44,7 @@ public class AdminServiceImp implements AdminService {
 
     @Override
     public void registerPerson(RegisterForm registerForm) {
+        registerForm.setPassword(new BCryptPasswordEncoder().encode(registerForm.getPassword()));
         personRepository.save(convertRegisterFormToPerson(registerForm));
     }
 

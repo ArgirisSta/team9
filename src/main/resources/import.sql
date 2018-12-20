@@ -1,9 +1,9 @@
 // Persons
 INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('1680 Edsel Road', '062059316', 'BMW', 'abc@abc.com', 'Nikos', '$2a$10$lqTjMbusW7IkfE1fPQKM/.js0HR26ehshDwwPOG7Q2p/v74PJCEW', 'ABC-1234', 'Mpekas', 'USER');
-INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('3912 Hillhaven Drive', '313615519', 'ALFA_ROMEO', 'one@abc.com', 'Giorgos', '$2a$10$phTSm.9d9SxZcKKpBgW5O.BFyvkIe.MYk/frwSC7Ku4zXPBuymTy.', 'JKD-1234', 'Giakoumis', 'USER');
-INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('587 Fulton Street', '096318033', 'FERRARI', 'cba@abc.com', 'Eleftheria', '$2a$10$dG5THgAD5FwMl3L.F74xBOI/1fFYuOotTn3s2F1eeo4TEPAnvQzSy', 'MNK-1234', 'Papadopoulou', 'ADMIN');
-INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('3524 Hurry Street', '176823413', 'FIAT', 'ppp@abc.com', 'Dimitris', '$2a$10$oJGRtJtlEtyQYKWsGxle1OcR5WekdjDGqdeyWQA0CKAaSYG5epHrW', 'PPP-1234', 'Xenakis', 'ADMIN');
-INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('4100 Carson Street', '837585289', 'LAND_ROVER', 'rov@abc.com', 'Argiris', '$2a$10$41ddYxlhi6nKMvSRGoQ2K.uoJXlPWrTC./8SQMPO4O0ZOm4xlI/46', 'AAA-1234', 'Stamatopoulos', 'ADMIN');
+INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('3912 Hillhaven Drive', '313615519', 'ALFA_ROMEO', 'giorgos@gmail.com', 'Giorgos', '$2a$10$phTSm.9d9SxZcKKpBgW5O.BFyvkIe.MYk/frwSC7Ku4zXPBuymTy.', 'JKD-1234', 'Giakoumis', 'USER');
+INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('587 Fulton Street', '096318033', 'FERRARI', 'eleftheria@gmail.com', 'Eleftheria', '$2a$10$dG5THgAD5FwMl3L.F74xBOI/1fFYuOotTn3s2F1eeo4TEPAnvQzSy', 'MNK-1234', 'Papadopoulou', 'ADMIN');
+INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('3524 Hurry Street', '176823413', 'FIAT', 'dimitris@gmail.com', 'Dimitris', '$2a$10$oJGRtJtlEtyQYKWsGxle1OcR5WekdjDGqdeyWQA0CKAaSYG5epHrW', 'PPP-1234', 'Xenakis', 'ADMIN');
+INSERT INTO persons (address, afm, car_brand, email, name, password, plate_number, surname, user_type) VALUES('4100 Carson Street', '837585289', 'LAND_ROVER', 'argiris@gmail.com', 'Argiris', '$2a$10$41ddYxlhi6nKMvSRGoQ2K.uoJXlPWrTC./8SQMPO4O0ZOm4xlI/46', 'AAA-1234', 'Stamatopoulos', 'ADMIN');
 
 // Repairs
 
