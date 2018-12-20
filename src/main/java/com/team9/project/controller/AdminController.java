@@ -28,9 +28,8 @@ public class  AdminController {
     public String showAdminPage(Model model) {
         LocalDateTime today = LocalDate.now().atStartOfDay();
         LocalDateTime tomorrow = today.plusDays(1);
-        System.out.println("TODAY " + today + " TOMORROW: " + tomorrow);
-        List <RepairModel> repairModelList = adminService.findFirst10RepairsByRepairDateBetweenAndRepairStatus(today, tomorrow, RepairStatus.WAITING);
-        System.out.println(repairModelList + "=============!!!!!!");
+        List <RepairModel> repairModelList = adminService
+                .findFirst10RepairsByRepairDateBetweenAndRepairStatus(today, tomorrow, RepairStatus.WAITING);
         model.addAttribute("first10RepairsList", repairModelList);
         return "/admin/index";
 
