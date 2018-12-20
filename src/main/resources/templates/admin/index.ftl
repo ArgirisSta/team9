@@ -54,12 +54,16 @@
 
                         <#include "/partials/persons.ftl">
 
-            <div class="table-active" style=" position: relative; top: 90px;">
 
-            <H3>UP COMING REPAIRS</H3>
+
+
 
 
                 <div class="table" style="padding-left: 0px;position: relative;top: -45px;">
+
+                    <div class="table-active" style=" position: relative; top: 90px;">
+
+
                     <#if first10RepairsList??>
                     <table id="Top10Repairs" class="table table-striped">
                         <thead>

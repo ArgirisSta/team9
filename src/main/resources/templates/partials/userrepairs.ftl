@@ -1,7 +1,7 @@
 <#if personrepairs??>
-<h1 class="page-header">Repairs</h1>
 
-<table class="table table-striped">
+
+<table class="table table-striped" style="background: #2aabd2">
     <thead>
     <tr>
 

@@ -2,4 +2,4 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="/images/favicon1.png" rel="icon">
+    <link href="/images/favicon.png" rel="icon">
