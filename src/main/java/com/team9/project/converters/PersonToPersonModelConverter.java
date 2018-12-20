@@ -10,10 +10,6 @@ public class PersonToPersonModelConverter {
 
     public PersonModel mapToModel(Person person) {
 
-        if (person == null) {
-            return null;
-        }
-
         PersonModel personModel = new PersonModel(person.getPersonId(), person.getName(), person.getSurname(), person.getAfm(),
                 person.getAddress(), person.getEmail(), person.getUserType(),
                 person.getPlateNumber(), person.getCarBrand());///

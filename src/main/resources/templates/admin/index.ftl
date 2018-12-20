@@ -59,7 +59,47 @@
             <H3>UP COMING REPAIRS</H3>
 
 
-                <!--/#EDW THA BALEIS TA REPAIRS ROUXLAAAAAAAAAAA KATALABESSSSSS???-->
+                <div class="table" style="padding-left: 0px;position: relative;top: -45px;">
+                    <#if first10RepairsList??>
+                    <table id="Top10Repairs" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Repair ID</th>
+                            <th>Date/Time</th>
+                            <th>Repair Status</th>
+                            <th>Repair Type</th>
+                            <th>Price</th>
+                            <th>AFM</th>
+                            <th>Comments</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <#list first10RepairsList as repair>
+                        <tr>
+
+                            <td> ${repair.id}</td>
+                            <td> ${repair.date}</td>
+                            <td> ${repair.repairStatus}</td>
+                            <td> ${repair.repairType}</td>
+                            <td> ${repair.price}</td>
+                            <td> ${repair.afm}</td>
+                            <#if repair.comments??>
+                            <td> ${repair.comments}</td>
+                            <#else>
+                            <td> - </td>
+                            </#if>
+
+                        </tr>
+                        </#list>
+                        <#else>
+                        Upcoming repairs can not be found.
+                    </#if>
+                </tbody>
+            </table>
+
+
+        </div>
 
             </div>
 

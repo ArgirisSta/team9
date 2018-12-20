@@ -12,3 +12,15 @@ INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, pe
 INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 4250, '2017-12-25 14:25', 'COMPLETED', 'MAJOR', 3);
 INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 350, '2015-12-25 18:00', 'WAITING', 'MAJOR', 4);
 INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 330, '2022-12-25 12:00', 'COMPLETED', 'MINOR', 1);
+
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 250, '2018-12-20 02:18', 'WAITING', 'MINOR', 1);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Lights replacement', 550, '2018-12-20 02:18', 'WAITING', 'MAJOR', 2);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 4250, '2018-12-20 02:18', 'COMPLETED', 'MAJOR', 3);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 350, '2018-12-20 02:18', 'WAITING', 'MAJOR', 4);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 330, '2018-12-20 02:18', 'COMPLETED', 'MINOR', 1);
+
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 250, '2018-12-20 02:18', 'WAITING', 'MINOR', 1);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Lights replacement', 550, '2018-12-20 02:18', 'WAITING', 'MAJOR', 2);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 4250, '2018-12-20 02:18', 'COMPLETED', 'MAJOR', 3);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('Door replacement', 350, '2018-12-20 02:18', 'WAITING', 'MAJOR', 4);
+INSERT INTO repairs (comment, price, repair_date, repair_status, repair_Type, person_id) VALUES('New tires', 330, '2018-12-20 02:18', 'COMPLETED', 'MINOR', 1);

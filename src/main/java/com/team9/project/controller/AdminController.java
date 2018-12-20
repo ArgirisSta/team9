@@ -1,18 +1,19 @@
 package com.team9.project.controller;
 
-import com.team9.project.domain.Person;
+import com.team9.project.domain.RepairStatus;
 import com.team9.project.form.RegisterForm;
 import com.team9.project.model.PersonModel;
+import com.team9.project.model.RepairModel;
 import com.team9.project.service.AdminService;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -24,9 +25,15 @@ public class  AdminController {
     private AdminService adminService;
 
     @GetMapping(value = "/admin")
-    public String showAdminPage() {
-
+    public String showAdminPage(Model model) {
+        LocalDateTime today = LocalDate.now().atStartOfDay();
+        LocalDateTime tomorrow = today.plusDays(1);
+        System.out.println("TODAY " + today + " TOMORROW: " + tomorrow);
+        List <RepairModel> repairModelList = adminService.findFirst10RepairsByRepairDateBetweenAndRepairStatus(today, tomorrow, RepairStatus.WAITING);
+        System.out.println(repairModelList + "=============!!!!!!");
+        model.addAttribute("first10RepairsList", repairModelList);
         return "/admin/index";
+
     }
 
     @GetMapping(value = "/admin/addUser")
