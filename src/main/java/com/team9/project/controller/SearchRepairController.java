@@ -33,7 +33,7 @@ public class SearchRepairController {
     }
 
     @GetMapping(value = "/admin/searchRepairResult")
-    public String searchForRepairs(Model model, @ModelAttribute(name = "searchForm") SearchRepairForm searchForm) {
+    public String searchForRepairs(Model model, @ModelAttribute SearchRepairForm searchForm) {
         List<RepairModel> repairs = findrepairs(searchForm);
         logger.info("=============================");
         logger.info("====Print repairModel====");

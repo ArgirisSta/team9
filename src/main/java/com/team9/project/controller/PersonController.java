@@ -20,7 +20,7 @@ public class PersonController {
     PersonServiceImpl personService;
 
     @GetMapping("/admin/")
-    public String person (Model model, @RequestParam(value = "id") Long id) {
+    public String person (Model model, @RequestParam Long id) {
         Person person;
         logger.info("=============================");
         logger.info("====Getting all authors====");

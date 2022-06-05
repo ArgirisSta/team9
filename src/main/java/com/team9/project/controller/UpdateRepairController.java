@@ -56,7 +56,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
     }
 
     @GetMapping("/admin/updateRepair/{id}")
-    public String updateRepairGet (Model model, @PathVariable(name = "id") String id ) {
+    public String updateRepairGet (Model model, @PathVariable String id ) {
 
         RepairForm repairForm = repairService.locate(Long.valueOf(id));
         model.addAttribute(REPAIR_FORM,
@@ -114,7 +114,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
 
 
     @GetMapping("/repair/repairs")
-    public String repair (Model model, @RequestParam(value = "id") Long id) {
+    public String repair (Model model, @RequestParam Long id) {
         Repair repair;
         repair = repairService.findById(id);
         model.addAttribute("name", repair.getRepairDate());
@@ -126,7 +126,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
     }
 
     @GetMapping("/repairsByPersonId")
-    public String repairByPersonId (Model model, @RequestParam(value = "id") Long id) {
+    public String repairByPersonId (Model model, @RequestParam Long id) {
         List<Repair> repair;
         Person person = new Person(id);
 

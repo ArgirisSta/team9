@@ -42,7 +42,7 @@ public class  AdminController {
     }
 
     @PostMapping(value = "/admin/addUser")
-    public String handleRegistrationForm(Model model, @Valid @ModelAttribute("registerForm") RegisterForm registerForm,
+    public String handleRegistrationForm(Model model, @Valid @ModelAttribute RegisterForm registerForm,
                                          BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             return "/admin/addUser";
@@ -52,7 +52,7 @@ public class  AdminController {
     }
 
     @GetMapping(value = "/admin/search")
-    public String handleSearch(Model model, @RequestParam("criteria") String criteria) {
+    public String handleSearch(Model model, @RequestParam String criteria) {
 
         String digitRegex = "\\d+";
         List<PersonModel> personList;
@@ -74,7 +74,7 @@ public class  AdminController {
     }
 
     @GetMapping("/admin/updatePerson/{id}")
-    public String updateRepairGet (Model model, @PathVariable(name = "id") String id ) {
+    public String updateRepairGet (Model model, @PathVariable String id ) {
 
         PersonModel personModel = adminService.findPersonById(Long.parseLong(id));
         model.addAttribute("personForm", personModel);
@@ -99,13 +99,13 @@ public class  AdminController {
     }
 
     @GetMapping(value = "/admin/deletePerson/{id}")
-    public String deletePersonGet(@PathVariable(name = "id") String id) {
+    public String deletePersonGet(@PathVariable String id) {
         adminService.deletePersonById(Long.parseLong(id));
         return "redirect:/admin";
     }
 
     @PostMapping(value = "/admin/deletePerson/{id}")
-    public String deletePerson(@PathVariable(name = "id") String id) {
+    public String deletePerson(@PathVariable String id) {
 
         adminService.deletePersonById(Long.parseLong(id));
 

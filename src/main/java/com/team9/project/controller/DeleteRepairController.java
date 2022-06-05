@@ -24,7 +24,7 @@ public class DeleteRepairController {
 
 
     @GetMapping("/admin/deleteRepair/{id}")
-    public String deleteRepairGet (Model model, @PathVariable(name = "id") String id ) {
+    public String deleteRepairGet (Model model, @PathVariable String id ) {
 
         RepairForm repairForm = repairService.locate(Long.valueOf(id));
         model.addAttribute(REPAIR_FORM,
