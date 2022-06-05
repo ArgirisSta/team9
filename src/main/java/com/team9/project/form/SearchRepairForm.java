@@ -1,7 +1,5 @@
 package com.team9.project.form;
 
-import com.team9.project.domain.RepairStatus;
-import com.team9.project.domain.RepairType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;

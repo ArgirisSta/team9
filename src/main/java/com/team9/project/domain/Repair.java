@@ -1,9 +1,7 @@
 package com.team9.project.domain;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "Repairs")
@@ -39,6 +37,7 @@ public class Repair {
         this.owner = owner;
         this.comment = comments;
     }
+
     public Repair(long repairId, LocalDateTime repairDate, RepairStatus repairStatus, RepairType repairType, double price, Person owner, String comment) {
         this.repairId = repairId;
         this.repairDate = repairDate;
@@ -48,6 +47,7 @@ public class Repair {
         this.owner = owner;
         this.comment = comment;
     }
+
     public Repair(){
     }
 

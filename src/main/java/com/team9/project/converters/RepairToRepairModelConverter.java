@@ -9,7 +9,7 @@ public class RepairToRepairModelConverter {
 
     public RepairModel mapToModel(Repair repair) {
 
-        RepairModel repairModel = new RepairModel();
+        final RepairModel repairModel = new RepairModel();
         repairModel.setId(repair.getRepairId());
         repairModel.setDate(repair.getRepairDate());
         repairModel.setRepairStatus(repair.getRepairStatus());

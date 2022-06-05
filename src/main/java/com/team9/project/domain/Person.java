@@ -1,7 +1,4 @@
- package com.team9.project.domain;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+package com.team9.project.domain;
 
 import javax.persistence.*;
 import java.util.Collection;

@@ -36,7 +36,7 @@ public class AdminServiceImp implements AdminService {
     private RepairToRepairModelConverter repairConverter;
 
     public Person convertRegisterFormToPerson(RegisterForm registerForm) {
-        Person person = new Person(registerForm.getAfm(), registerForm.getName(), registerForm.getSurname(),
+        final Person person = new Person(registerForm.getAfm(), registerForm.getName(), registerForm.getSurname(),
                 registerForm.getAddress(), registerForm.getEmail(), registerForm.getPassword(),
                 registerForm.getCarBrand(), registerForm.getPlateNumber(), registerForm.getUserType());
         return person;
@@ -82,7 +82,7 @@ public class AdminServiceImp implements AdminService {
 
     @Override
     public void updatePerson(PersonModel personModel) {
-        Person personToUpdate = personRepository.findById(personModel.getId());
+        final Person personToUpdate = personRepository.findById(personModel.getId());
         personRepository.save(personModelToPersonConverter.convertModelToPerson(personModel, personToUpdate));
     }
 

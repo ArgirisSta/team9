@@ -10,7 +10,7 @@ public class PersonToPersonModelConverter {
 
     public PersonModel mapToModel(Person person) {
 
-        PersonModel personModel = new PersonModel(person.getPersonId(), person.getName(), person.getSurname(), person.getAfm(),
+        final PersonModel personModel = new PersonModel(person.getPersonId(), person.getName(), person.getSurname(), person.getAfm(),
                 person.getAddress(), person.getEmail(), person.getUserType(),
                 person.getPlateNumber(), person.getCarBrand());///
 

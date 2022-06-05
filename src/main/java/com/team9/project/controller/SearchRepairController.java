@@ -34,7 +34,7 @@ public class SearchRepairController {
 
     @GetMapping(value = "/admin/searchRepairResult")
     public String searchForRepairs(Model model, @ModelAttribute SearchRepairForm searchForm) {
-        List<RepairModel> repairs = findrepairs(searchForm);
+        final List<RepairModel> repairs = findrepairs(searchForm);
         logger.info("=============================");
         logger.info("====Print repairModel====");
         logger.info(repairs.toString());
@@ -43,10 +43,10 @@ public class SearchRepairController {
     }
 
     private List<RepairModel> findrepairs(SearchRepairForm searchForm) {
-        LocalDateTime fromDate = searchForm.getFromDate();
-        LocalDateTime toDate = searchForm.getToDate();
-        String Afm = searchForm.getAfm();
-        String Plate = searchForm.getPlate();
+        final LocalDateTime fromDate = searchForm.getFromDate();
+        final LocalDateTime toDate = searchForm.getToDate();
+        final String Afm = searchForm.getAfm();
+        final String Plate = searchForm.getPlate();
 
 
         if ( (fromDate!= null && toDate !=null )) {

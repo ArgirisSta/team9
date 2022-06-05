@@ -86,8 +86,12 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 		</dependency>
-
-
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+			<version>2.7.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -100,8 +104,10 @@
 					<activeRecipes>
 						<recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7</recipe>
 						<recipe>org.openrewrite.java.spring.boot2.SpringBoot2BestPractices</recipe>
-<!--						<recipe>org.openrewrite.java.format.RemoveTrailingWhitespace</recipe>
-						<recipe>org.openrewrite.java.RemoveUnusedImports</recipe>-->
+						<recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
+						<recipe>org.openrewrite.java.format.BlankLines</recipe>
+						<recipe>org.openrewrite.java.cleanup.EmptyBlock</recipe>
+						<recipe>org.openrewrite.java.cleanup.FinalizeLocalVariables</recipe>
 					</activeRecipes>
 				</configuration>
 				<dependencies>

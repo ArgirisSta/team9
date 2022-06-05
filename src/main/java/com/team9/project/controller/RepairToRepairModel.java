@@ -1,7 +1,6 @@
 package com.team9.project.controller;
 
 import com.team9.project.domain.Repair;
-import com.team9.project.form.RepairForm;
 import com.team9.project.model.RepairModel;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class RepairToRepairModel {
 
     public RepairModel mapToRepairModel(Repair repair) {
-        RepairModel repairModel = new RepairModel();
+        final RepairModel repairModel = new RepairModel();
         repairModel.setId(repair.getRepairId());
         repairModel.setDate(repair.getRepairDate());
         repairModel.setComments(repair.getComment());

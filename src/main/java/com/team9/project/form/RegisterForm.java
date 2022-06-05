@@ -3,7 +3,10 @@ package com.team9.project.form;
 import com.team9.project.domain.CarBrand;
 import com.team9.project.domain.UserType;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class RegisterForm {
 

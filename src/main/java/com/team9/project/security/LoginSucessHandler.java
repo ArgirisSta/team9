@@ -29,7 +29,7 @@ public class LoginSucessHandler extends SavedRequestAwareAuthenticationSuccessHa
 
         response.addCookie(generateTimestampCookie());
 
-        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+        final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         String redirectUrl = "/";
         for (GrantedAuthority grantedAuthority : authorities) {
             if (grantedAuthority.getAuthority().equals("ADMIN")) {

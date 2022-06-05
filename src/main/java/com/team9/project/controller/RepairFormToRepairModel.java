@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class RepairFormToRepairModel {
 
     public RepairModel mapToRepairModel(RepairForm repairForm) {
-        RepairModel repairModel = new RepairModel();
+        final RepairModel repairModel = new RepairModel();
         repairModel.setId(repairForm.getId());
         repairModel.setDate(repairForm.getDate());
         repairModel.setComments(repairForm.getComments());

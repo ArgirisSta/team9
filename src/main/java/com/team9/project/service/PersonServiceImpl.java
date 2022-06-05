@@ -42,6 +42,7 @@ public class PersonServiceImpl implements PersonService {
     public Person createPerson(String afm, String name, String surname, String address, String email, String password, String carBrand, String plateNumber, String userType) {
         return null;
     }
+
     @Override
     public Person findByAfm(String afm){
         return personRepository.findByAfmLike(afm)
@@ -61,9 +62,6 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.findByEmail(email);
 
     }
-
-
-
 
 
 }

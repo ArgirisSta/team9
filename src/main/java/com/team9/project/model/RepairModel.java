@@ -1,10 +1,8 @@
 package com.team9.project.model;
 
-import com.team9.project.domain.Person;
 import com.team9.project.domain.RepairStatus;
 import com.team9.project.domain.RepairType;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class RepairModel {

@@ -2,10 +2,6 @@ package com.team9.project.service;
 
 import com.team9.project.domain.Person;
 
-import com.team9.project.domain.Repair;
-
-import org.springframework.ui.Model;
-
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +24,7 @@ public interface PersonService {
                         String carBrand, String plateNumber, String userType);
 
     Person findByplateNumer(String plate);
+
     Person findByEmail(String email);
 
 

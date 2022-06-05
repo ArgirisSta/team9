@@ -47,18 +47,17 @@ public class RepairServiceImpl implements RepairService {
     }
 
 
-
     public Repair create(RepairModel repairModel) {
-        Person person = personService.findByAfm(repairModel.getAfm());
-        Repair repair = new Repair(repairModel.getDate(),repairModel.getRepairStatus(),
-                repairModel.getRepairType(),(Double) repairModel.getPrice(),person,repairModel.getComments());
+        final Person person = personService.findByAfm(repairModel.getAfm());
+        final Repair repair = new Repair(repairModel.getDate(), repairModel.getRepairStatus(),
+                repairModel.getRepairType(), (Double) repairModel.getPrice(), person, repairModel.getComments());
         return       repairRepository.save(repair);
 
     }
 
     public RepairForm locate(Long Id){
-        Repair repair = this.findById(Id);
-        RepairForm repairForm = new RepairForm();
+        final Repair repair = this.findById(Id);
+        final RepairForm repairForm = new RepairForm();
         repairForm.setId(repair.getRepairId());
         repairForm.setAfm(repair.getOwner().getAfm());
         repairForm.setComments(repair.getComment());
@@ -70,8 +69,8 @@ public class RepairServiceImpl implements RepairService {
     }
 
     public Repair update(RepairModel repairModel) {
-        Person person = personService.findByAfm(repairModel.getAfm());
-        Repair repair = this.findById(repairModel.getId());
+        final Person person = personService.findByAfm(repairModel.getAfm());
+        final Repair repair = this.findById(repairModel.getId());
         repair.setComment(repairModel.getComments());
         repair.setOwner(person);
         repair.setPrice(repairModel.getPrice());
@@ -89,9 +88,10 @@ public class RepairServiceImpl implements RepairService {
                 .collect(Collectors.toList());
 
     }
+
     public List<RepairModel> findByOwnerAfm(String Afm){
-        Person person = personService.findByAfm(Afm);
-        List<Repair> repairs = this.repairRepository.findByOwner(person);
+        final Person person = personService.findByAfm(Afm);
+        final List<Repair> repairs = this.repairRepository.findByOwner(person);
         return repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
@@ -99,8 +99,8 @@ public class RepairServiceImpl implements RepairService {
     }
 
     public List<RepairModel> findByPlate(String plate){
-        Person person = personService.findByplateNumer(plate);
-        List<Repair> repairs = this.repairRepository.findByOwner(person);
+        final Person person = personService.findByplateNumer(plate);
+        final List<Repair> repairs = this.repairRepository.findByOwner(person);
         return repairs
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))

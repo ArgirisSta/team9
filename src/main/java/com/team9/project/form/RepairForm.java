@@ -1,18 +1,13 @@
 package com.team9.project.form;
 
 
-import com.team9.project.domain.Person;
 import com.team9.project.domain.RepairStatus;
 import com.team9.project.domain.RepairType;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class RepairForm {
-
 
 
     private long Id;

@@ -26,9 +26,9 @@ public class  AdminController {
 
     @GetMapping(value = "/admin")
     public String showAdminPage(Model model) {
-        LocalDateTime today = LocalDate.now().atStartOfDay();
-        LocalDateTime tomorrow = today.plusDays(1);
-        List <RepairModel> repairModelList = adminService
+        final LocalDateTime today = LocalDate.now().atStartOfDay();
+        final LocalDateTime tomorrow = today.plusDays(1);
+        final List<RepairModel> repairModelList = adminService
                 .findFirst10RepairsByRepairDateBetweenAndRepairStatus(today, tomorrow, RepairStatus.WAITING);
         model.addAttribute("first10RepairsList", repairModelList);
         return "/admin/index";
@@ -54,7 +54,7 @@ public class  AdminController {
     @GetMapping(value = "/admin/search")
     public String handleSearch(Model model, @RequestParam String criteria) {
 
-        String digitRegex = "\\d+";
+        final String digitRegex = "\\d+";
         List<PersonModel> personList;
 
         if(criteria.isEmpty()) {
@@ -76,7 +76,7 @@ public class  AdminController {
     @GetMapping("/admin/updatePerson/{id}")
     public String updateRepairGet (Model model, @PathVariable String id ) {
 
-        PersonModel personModel = adminService.findPersonById(Long.parseLong(id));
+        final PersonModel personModel = adminService.findPersonById(Long.parseLong(id));
         model.addAttribute("personForm", personModel);
         return "/admin/updatePersonForm";
     }

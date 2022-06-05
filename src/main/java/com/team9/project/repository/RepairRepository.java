@@ -6,10 +6,10 @@ import com.team9.project.domain.RepairStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+
 @Repository
 public interface RepairRepository extends JpaRepository<Repair,Long> {
 
@@ -27,11 +27,6 @@ public interface RepairRepository extends JpaRepository<Repair,Long> {
     void delete(Repair repair);
 
     List<Repair> findFirst10RepairsByRepairDateBetweenAndRepairStatus(LocalDateTime fromDateTime, LocalDateTime toDateTime, RepairStatus repairStatus);
-
-
-
-
-
 
 
 }

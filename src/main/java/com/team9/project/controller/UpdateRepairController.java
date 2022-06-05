@@ -44,13 +44,13 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
                            BindingResult bindingResult) {
 
 
-       // if (bindingResult.hasErrors()) {
-       //     //have some error handling here, perhaps add extra error messages to the model
-       //     //model.addAttribute(ERROR_MESSAGE, "an error occurred");
-       //     return "addRepair";
-       // }
+        // if (bindingResult.hasErrors()) {
+        //     //have some error handling here, perhaps add extra error messages to the model
+        //     //model.addAttribute(ERROR_MESSAGE, "an error occurred");
+        //     return "addRepair";
+        // }
 
-        RepairModel repairModel = mapper.mapToRepairModel(repairForm);
+        final RepairModel repairModel = mapper.mapToRepairModel(repairForm);
         repairService.create(repairModel);
         return "redirect:/admin/searchRepair";
     }
@@ -58,7 +58,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
     @GetMapping("/admin/updateRepair/{id}")
     public String updateRepairGet (Model model, @PathVariable String id ) {
 
-        RepairForm repairForm = repairService.locate(Long.valueOf(id));
+        final RepairForm repairForm = repairService.locate(Long.valueOf(id));
         model.addAttribute(REPAIR_FORM,
                 repairForm);
         return "admin/updateRepairForm";
@@ -77,40 +77,10 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
         //     return "addRepair";
         // }
 
-        RepairModel repairModel = mapper.mapToRepairModel(repairForm);
+        final RepairModel repairModel = mapper.mapToRepairModel(repairForm);
         repairService.update(repairModel);
         return "redirect:/admin/searchRepair";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     @GetMapping("/repair/repairs")
@@ -128,7 +98,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
     @GetMapping("/repairsByPersonId")
     public String repairByPersonId (Model model, @RequestParam Long id) {
         List<Repair> repair;
-        Person person = new Person(id);
+        final Person person = new Person(id);
 
 
         repair = (List<Repair>) repairService.findRepairByPersonId(person);
@@ -136,7 +106,7 @@ public class UpdateRepairController { private final Logger logger = LoggerFactor
         logger.info("====Getting all Repairs====");
         //repairService.findRepairByPersonId(person).forEach(repairl -> logger.info(repairl.toString()));
         model.addAttribute("repair", repair);
-        String repairString = repair.toString();
+        final String repairString = repair.toString();
         model.addAttribute("surname", repairString);
 
         return "listings";
